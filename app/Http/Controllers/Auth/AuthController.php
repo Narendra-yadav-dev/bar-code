@@ -21,13 +21,13 @@ class AuthController extends Controller
         $credentials = $request->only('email','password');
 
         if (Auth::attempt($credentials)) {
-            return redirect()->route('admin.dashbaord');
+            return redirect()->route('dashbaord');
         }
 
         return back()->withErrors(['email' => 'Invalid credentials']);
     }
     public function logout(){
         Auth::logout();
-        return redirect()->route('admin.login');
+        return redirect()->route('login');
     }
 }

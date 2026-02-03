@@ -22,7 +22,10 @@ class UserRoleSeeder extends Seeder
             'Manager',
             'User',
         ]);
+<<<<<<< HEAD
 
         
+=======
+>>>>>>> 42f1a5a2834fd85a396e58f9fd5e777886114769
     }
 }
