@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ItemController;
 
-Route::prefix('admin')->group(function () {
+Route::prefix('admin')->name('admin.')->group(function () {
     Route::middleware('guest')->group(function () {
         // login
         Route::get('/', [AuthController::class, 'login'])->name('login');
@@ -15,7 +15,7 @@ Route::prefix('admin')->group(function () {
     });
     // dashboard
     Route::get('/log-out', [AuthController::class, 'logout'])->name('auth.logout');
-    Route::get('/dashboard', [DashboardController::class, 'index']);
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashbaord');
     Route::resource('users', UserController::class)
         ->middleware('auth');
     Route::get('addUser', [UserController::class, 'create'])->name('addUser');
