@@ -16,7 +16,7 @@
                 @if(session('success'))
                     <p style="color:green">{{ session('success') }}</p>
                 @endif
-                <form action="{{route('auth.login')}}" method="post">
+                <form action="{{route('admin.auth.login')}}" method="post">
                     @csrf
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
