@@ -23,9 +23,6 @@ class UserRoleSeeder extends Seeder
             'User',
         ]);
 
-        // Optional: set primary role_id
-        $user->update([
-            'role_id' => 1, // Admin
-        ]);
+        
     }
 }
