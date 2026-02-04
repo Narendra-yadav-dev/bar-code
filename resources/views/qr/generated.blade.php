@@ -16,7 +16,7 @@
     <div class="card">
         <div class="card-body">
             <button id="startScan">Scan QR Code</button>
-            <div id="reader" style="width:300px; display:none;"></div>
+            <div id="reader" style="width:300px; display:none;" class="scan_qr_code mt-3"></div>
         </div>
     </div>
 </div>
