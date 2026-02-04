@@ -16,9 +16,9 @@
   <body>
     <div class="container-scroller">
             @include('partials.navbar')
-        <div class="">
-            
-            <div class="main-panel1">
+        <div class="container-fluid page-body-wrapper">
+            @include('partials.sidebar')
+            <div class="main-panel">
                 @yield('content')
                 @include('partials.footer')
             </div>
@@ -38,6 +38,8 @@
     <script src="{{ asset('public/js/settings.js') }}"></script>
     <script src="{{ asset('public/js/todolist.js') }}"></script>
     <script src="{{ asset('public/js/jquery.cookie.js') }}"></script>
- 
+
+    <!-- <script src="{{ asset('public/js/dashboard.js') }}"></script> -->
+    <!-- End custom js for this page -->
   </body>
 </html>
