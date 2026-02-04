@@ -16,9 +16,9 @@
   <body>
     <div class="container-scroller">
             @include('partials.navbar')
-        <div class="container-fluid page-body-wrapper">
-            @include('partials.sidebar')
-            <div class="main-panel">
+        <div class="">
+            
+            <div class="main-panel1">
                 @yield('content')
                 @include('partials.footer')
             </div>

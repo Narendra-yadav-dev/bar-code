@@ -5,27 +5,6 @@
       <!-- <img src="{{ asset('public/images/logo.svg') }}" alt="logo"> -->
        <h2 class="fw-bold">Bar Code</h2>
     </a>
-    <a class="navbar-brand brand-logo-mini" href="{{route('dashbaord')}}">
-
-    </a>
-  </div>
-  <div class="navbar-menu-wrapper d-flex align-items-stretch">
-    <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-      <span class="mdi mdi-menu"></span>
-    </button>
-
-    <ul class="navbar-nav navbar-nav-right">
-      <li class="nav-item nav-profile dropdown">
-        <a class="nav-link" href="#">
-          <div class="nav-profile-img">
-            <img src="{{ asset('public/images/faces/face1.jpg') }}" alt="image">
-            <span class="availability-status online"></span>
-          </div>
-        </a>
-      </li>
-    </ul>
-      <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-      <span class="mdi mdi-menu"></span>
-    </button>
+     
   </div>
 </nav>
