@@ -38,8 +38,6 @@
     <script src="{{ asset('public/js/settings.js') }}"></script>
     <script src="{{ asset('public/js/todolist.js') }}"></script>
     <script src="{{ asset('public/js/jquery.cookie.js') }}"></script>
-
-    <!-- <script src="{{ asset('public/js/dashboard.js') }}"></script> -->
-    <!-- End custom js for this page -->
+ 
   </body>
 </html>
