@@ -26,6 +26,8 @@
     </div>
 
 {{-- JS --}}
+<script src="https://unpkg.com/html5-qrcode"></script>
+
 <script src="{{ asset('public/vendors/js/vendor.bundle.base.js') }}"></script>
 
     <script src="{{ asset('public/vendors/chart.js/chart.umd.js') }}"></script>
@@ -37,7 +39,7 @@
     <script src="{{ asset('public/js/todolist.js') }}"></script>
     <script src="{{ asset('public/js/jquery.cookie.js') }}"></script>
 
-    <script src="{{ asset('public/js/dashboard.js') }}"></script>
+    <!-- <script src="{{ asset('public/js/dashboard.js') }}"></script> -->
     <!-- End custom js for this page -->
   </body>
 </html>

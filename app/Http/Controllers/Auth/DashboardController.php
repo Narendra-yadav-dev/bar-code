@@ -4,12 +4,14 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\User;
+use App\Models\Category;
+use App\Models\QRCode;
 
 class DashboardController extends Controller
 {
     public function index(){
-        $totalUser = User::count();
-        return view('dashboard', compact('totalUser'));
+        $totalCategory = Category::count();
+        $totalQr_code = QRCode::count();
+        return view('dashboard', compact('totalCategory','totalQr_code'));
     }
 }
