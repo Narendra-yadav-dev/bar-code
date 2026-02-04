@@ -30152,9 +30152,28 @@ dl li {
 .sidebar-dark .sidebar .nav.sub-menu .nav-item:hover {
   background: transparent;
 }
+/* .create_category_button_font{
+font-size: 14px !important;
+} */
+/* .create_category_button_font_text{
+font-size: 11px !important;
+} */
+.create_category_button_font{
+  font-size: 15px !important;
+}
+.btn-primary:not(.btn-light) {
+      width: 25% !important;
+       margin: 0px !important;
+}
+
 
 /* style for off-canvas menu*/
 @media screen and (max-width: 991px) {
+  .btn-primary:not(.btn-light) {
+      width: 100% !important;
+      margin-top: 10px !important;
+     
+}
   .sidebar-offcanvas {
     position: fixed;
     max-height: calc(100vh - 70px);
@@ -30170,12 +30189,16 @@ dl li {
   .sidebar-offcanvas.active {
     right: 0;
   }
+ .col-md-4.mobile_none {
+    display: none;
 }
-
+.col-md-2.mobile_none {
+    display: none;
+}
 /* Layouts */
 .navbar.fixed-top+.page-body-wrapper {
   padding-top: 70px;
-}
+}}
 
 @media (min-width: 992px) {
   .sidebar-mini .navbar .navbar-brand-wrapper {
@@ -30605,6 +30628,7 @@ dl li {
   background: #f2edf3;
   padding: 2.75rem 2.25rem;
   width: 100%;
+  padding-top: 95px;
   -webkit-flex-grow: 1;
   flex-grow: 1;
 }

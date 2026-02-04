@@ -34,18 +34,20 @@
                     <select name="category_id" class="form-control">
                         <option value="">Select Category</option>
                         @foreach($categories as $category)
-                            <option value="{{$category->id}}" @if(isset($qr_code->category_id)) {{ $qr_code->category_id === $category->id ? 'selected' : '' }} @endif >{{$category->name}}</option>
+                        <option value="{{$category->id}}" @if(isset($qr_code->category_id)) {{ $qr_code->category_id === $category->id ? 'selected' : '' }} @endif >{{$category->name}}</option>
                         @endforeach
                     </select>
                     @error('product_name')
-                        <div class="text-danger">
-                            {{$message}}
-                        </div>
+                    <div class="text-danger">
+                        {{$message}}
+                    </div>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary create_category_button_font">
                     {{ isset($qr_code) ? 'Update QR Code' : 'Generate QR Code' }}
                 </button>
+                <a href="{{route('categories.index')}}" class="btn mt-2 btn-primary create_category_button_font">Back</a>
+                
 
             </form>
         </div>

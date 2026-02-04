@@ -36,9 +36,10 @@
                         <div class="text-danger">{{$message}}</div>
                     @enderror
                 </div>
-                <button type="submit" class="btn btn-primary">
+                 <button type="submit" class="btn btn-primary create_category_button_font">
                     {{ isset($category) ? 'Update Category' : 'Create Category' }}
                 </button>
+                <a href="{{route('categories.index')}}" class="btn btn-primary mt-2 create_category_button_font">Back</a>
             </form>
         </div>
     </div>

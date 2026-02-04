@@ -19,10 +19,10 @@
                 action="{{ route('scan.store', $qr->rock_id) }}" enctype="multipart/form-data">
                 @csrf
                 @if($qr->categories->slug == 'luggage')
-                    <div class="mb-3">
-                        <label class="form-label">Luggage Type</label>
-                        <input type="text" name="luggage_type" class="form-control">
-                    </div>    
+                <div class="mb-3">
+                    <label class="form-label">Luggage Type</label>
+                    <input type="text" name="luggage_type" class="form-control">
+                </div>
                 @else
                 <div class="mb-3">
                     @if($qr->categories->slug == 'dogs')
@@ -62,29 +62,29 @@
                 </div>
                 @endif
                 @if($qr->categories->slug == 'dogs')
-                    <div class="mb-3">
-                        <label class="form-label">Breed</label>
-                        <input type="text" name="breed" class="form-control">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Color</label>
-                        <input type="text" name="color" class="form-control">
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Gender</label>
-                        <select name="gender" class="form-control">
-                            <option value="">Select Gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
+                <div class="mb-3">
+                    <label class="form-label">Breed</label>
+                    <input type="text" name="breed" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Color</label>
+                    <input type="text" name="color" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Gender</label>
+                    <select name="gender" class="form-control">
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
                 @endif
                 @if($qr->categories->slug == 'luggage')
-                    <div class="mb-3">
-                        <label class="form-label">Description</label>
-                        <input type="text" name="description" class="form-control">
-                    </div>
+                <div class="mb-3">
+                    <label class="form-label">Description</label>
+                    <input type="text" name="description" class="form-control">
+                </div>
                 @endif
                 <div class="mb-3">
                     <label class="form-label">Mobile Number</label>
@@ -102,6 +102,7 @@
                     Register
                 </button>
 
+                <a href="{{route('qr-code.reader')}}" class="btn btn-primary create_category_button_font">Back</a>
             </form>
         </div>
     </div>

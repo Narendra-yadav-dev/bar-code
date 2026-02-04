@@ -20,7 +20,7 @@
                 <div class="card-body">
                     <form method="GET" action="{{ route('qr-code.index') }}" class="mb-3">
                         <div class="row">
-                            <div class="col-md-4">
+                            <div class="col-md-4 mobile_none">
                                 <input
                                     type="text"
                                     name="search"
@@ -28,7 +28,7 @@
                                     placeholder="Search name ..."
                                     value="{{ request('search') }}">
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-2 mobile_none">
                                 <button class="btn btn-primary">Search</button>
                                 <a href="{{ url('qr-code.create') }}" class="btn btn-light">Reset</a>
                             </div>
