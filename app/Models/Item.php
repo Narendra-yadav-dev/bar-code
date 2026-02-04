@@ -11,5 +11,9 @@ class Item extends Model
         'status',
         'description',
     ];
+    protected $casts = [
+        'extra_data' => 'array',
+    ];
+
 }
 

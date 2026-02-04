@@ -30,3 +30,6 @@ Route::prefix('categories')->group(function () {
     Route::get('/{item}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
     Route::put('/{item}', [CategoryController::class, 'update'])->name('categories.update');
 });
+
+Route::get('scan/{rockId}',[QrController::class,'scan']);
+Route::post('scan/{rockId}',[QrController::class,'store'])->name('scan.store'); 

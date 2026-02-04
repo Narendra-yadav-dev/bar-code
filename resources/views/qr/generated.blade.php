@@ -21,35 +21,30 @@
     </div>
 </div>
 <script>
-const scanBtn = document.getElementById('startScan');
-const readerDiv = document.getElementById('reader');
+    const scanBtn = document.getElementById('startScan');
+    const readerDiv = document.getElementById('reader');
 
-scanBtn.addEventListener('click', () => {
-    readerDiv.style.display = 'block';
-    
-    const html5QrCode = new Html5Qrcode("reader");
-    
-    html5QrCode.start(
-        { facingMode: "environment" }, // back camera
-        {
-            fps: 10,
-            qrbox: 250
-        },
-        qrCodeMessage => {
-            console.log("QR Code:", qrCodeMessage);
-            
-            html5QrCode.stop();
-            
-            // redirect to decoded URL
-            window.location.href = qrCodeMessage;
-        },
-        errorMessage => {
-            // optional scan error logs
-        }
-    );
-    console.log('test');
-    return false;
-});
+    scanBtn.addEventListener('click', () => {
+        readerDiv.style.display = 'block';
+
+        const html5QrCode = new Html5Qrcode("reader");
+
+        html5QrCode.start({
+                facingMode: "environment"
+            }, // back camera
+            {
+                fps: 10,
+                qrbox: 250
+            },
+            qrCodeMessage => {
+                console.log("QR Code:", qrCodeMessage);
+
+                html5QrCode.stop();
+                window.location.href = qrCodeMessage;
+            },
+            errorMessage => {}
+        );
+    });
 </script>
 
 @endsection
