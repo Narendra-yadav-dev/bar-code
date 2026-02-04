@@ -12,7 +12,6 @@
             QR Codes
         </h3>
     </div>
-
     <div class="card">
         <div class="card-body">
             <button id="startScan">Scan QR Code</button>

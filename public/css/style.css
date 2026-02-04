@@ -30166,12 +30166,20 @@ dl li {
   width: 300px;
   display: none;
 }
-
-@media screen and (max-width: 480px) {
-  .scan_qr_code video {
-    width: 280px !important;
+@media screen and (max-width: 768px) {
+  /* Target the video tag specifically inside your reader div */
+  #reader video {
+    width: 100% !important; 
+    height: auto !important;
+    object-fit: cover;
   }
-
+  
+  /* Ensure the container itself doesn't stay fixed at 300px */
+  #reader {
+    width: 100% !important;
+    max-width: 300px; /* Keeps it from getting too huge on tablets */
+    margin: 0 auto;
+  }
 }
 
 @media screen and (max-width: 991px) {
@@ -30180,6 +30188,7 @@ dl li {
     margin-top: 10px !important;
 
   }
+
   .content-wrapper {
     padding-top: 20px !important;
   }
@@ -30230,9 +30239,6 @@ dl li {
     width: 185px;
   }
 
-  /* .scan_qr_code{
-  width:235px; 
-} */
   .sidebar-mini .navbar .navbar-menu-wrapper {
     width: calc(100% - 185px);
   }
