@@ -10,8 +10,19 @@ use App\Http\Controllers\ItemController;
 use App\Http\Controllers\QrController;
 use App\Http\Controllers\ScanController;
 
-Route::get('/', [DashboardController::class, 'index'])->name('dashbaord');
+Route::middleware('guest')->group(function () {
+    // login
+    Route::get('/',[AuthController::class,'login'])->name('login');
+    Route::post('/login',[AuthController::class,'loginPost'])->name('auth.login');
+});
+// dashboard
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])
+        ->name('dashbaord');
 
+    Route::get('/log-out', [AuthController::class, 'logout'])
+        ->name('auth.logout');
+});
 Route::prefix('qr-code')->group(function () {
     Route::get('/', [QrController::class, 'index'])->name('qr-code.index');
     Route::get('/create', [QrController::class, 'create'])->name('qr-code.create');
@@ -19,6 +30,7 @@ Route::prefix('qr-code')->group(function () {
     Route::get('/qr/generate/{id}', [QrController::class, 'edit'])->name('qr-code.edit');
     Route::put('/qr/generate/{id}', [QrController::class, 'update'])->name('qr-code.update');
     Route::get('/bar-code-reader', [QrController::class, 'reader'])->name('qr-code.reader');
+    Route::post('/print', [QrController::class, 'print'])->name('qr-code.print');
     // Route::get('/scan/{code}', [ScanController::class, 'scan']);
     // Route::post('/register-item', [ItemController::class, 'store'])->name('register-item');
 });
@@ -29,4 +41,5 @@ Route::prefix('categories')->group(function () {
     Route::post('/', [CategoryController::class, 'store'])->name('categories.store');
     Route::get('/{item}/edit', [CategoryController::class, 'edit'])->name('categories.edit');
     Route::put('/{item}', [CategoryController::class, 'update'])->name('categories.update');
+    Route::get('/{item}/delete', [CategoryController::class, 'delete'])->name('categories.delete');
 });

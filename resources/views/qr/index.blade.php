@@ -28,49 +28,67 @@
                                     placeholder="Search name ..."
                                     value="{{ request('search') }}">
                             </div>
-                            <div class="col-md-2 mobile_none">
+                            <div class="col-md-4 mobile_none">
                                 <button class="btn btn-primary">Search</button>
                                 <a href="{{ url('qr-code.create') }}" class="btn btn-light">Reset</a>
                             </div>
-                            <div class="col-md-2">
+                            <div class="col-md-4">
                                 <a href="{{ route('qr-code.create') }}" class="btn btn-light">Add Item</a>
                             </div>
                         </div>
                     </form>
                     <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th> Rock ID </th>
-                                    <th> Category </th>
-                                    <th> QR Image </th>
-                                    <th>Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($qr_codes as $qr)
-                                <tr>
-                                    <td> {{ $qr->rock_id }} </td>
-                                    <td> {{ $qr->categories->name ?? '-' }} </td>
-                                    <td>
-                                        {!! QrCode::size(50)->generate(url('/scan/'.$qr->rock_id)) !!}
-                                    </td>
-                                    <td>
-                                        <a href="{{ route('qr-code.edit', $qr->id) }}" class="btn btn-sm btn-primary">
-                                            Edit
-                                        </a>
-                                    </td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                        <div class="mt-3">
-                            {{ $qr_codes->links() }}
-                        </div>
+                        <form method="POST" action="{{ route('qr-code.print') }}" target="_blank">
+                            @csrf
+                            <button class="btn btn-primary">Print Selected</button>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <input type="checkbox" id="selectAll">
+                                        </th>
+                                        <th> ID </th>
+                                        <th> Rock ID </th>
+                                        <th> Category </th>
+                                        <th> QR Image </th>
+                                        <!-- <th>Action</th> -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @php $i = 1; @endphp
+                                    @foreach($qr_codes as $qr)
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" name="qr_ids[]" value="{{ $qr->id }}">
+                                        </td>
+                                        <td> {{ $i }} </td>
+                                        <td> {{ $qr->rock_id }} </td>
+                                        <td> {{ $qr->categories->name ?? '-' }} </td>
+                                        <td>
+                                            {!! QrCode::size(50)->generate(url('/scan/'.$qr->rock_id)) !!}
+                                        </td>
+                                        <!-- <td>
+                                            <a href="{{ route('qr-code.edit', $qr->id) }}" class="btn btn-sm btn-primary">
+                                                Edit
+                                            </a>
+                                        </td> -->
+                                    </tr>
+                                    @php $i++; @endphp
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+document.getElementById('selectAll').addEventListener('click', function () {
+    document.querySelectorAll('input[name="qr_ids[]"]').forEach(cb => {
+        cb.checked = this.checked;
+    });
+});
+</script>
 @endsection

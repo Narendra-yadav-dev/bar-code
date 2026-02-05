@@ -16,12 +16,18 @@
 
     <ul class="navbar-nav navbar-nav-right">
       <li class="nav-item nav-profile dropdown">
-        <a class="nav-link" href="#">
+        <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
           <div class="nav-profile-img">
             <img src="{{ asset('public/images/faces/face1.jpg') }}" alt="image">
             <span class="availability-status online"></span>
           </div>
         </a>
+        <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
+                 
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{{route('auth.logout')}}">
+            <i class="mdi mdi-logout me-2 text-primary"></i> Signout </a>
+        </div>
       </li>
     </ul>
       <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
