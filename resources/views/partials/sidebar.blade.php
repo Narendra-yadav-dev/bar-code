@@ -36,10 +36,10 @@
             <div class="collapse" id="ui-basic1">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('categories/create')}}">Add Category</a>
+                        <a class="nav-link" href="{{route('categories.create')}}">Add Category</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('categories')}}">Categories</a>
+                        <a class="nav-link" href="{{route('categories.index')}}">Categories</a>
                     </li>
                 </ul>
             </div>
@@ -53,15 +53,15 @@
             <div class="collapse" id="ui-basic2">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('qr-code/create')}}">Generate QR Code</a>
+                        <a class="nav-link" href="{{route('qr-code.create')}}">Generate QR Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{url('qr-code')}}">QR Code List</a>
+                        <a class="nav-link" href="{{route('qr-code.index')}}">QR Code List</a>
                     </li>
                 </ul>
             </div>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic3" aria-expanded="false" aria-controls="ui-basic3">
                 <span class="menu-title">Bar Code Reader</span>
                 <i class="menu-arrow"></i>
@@ -74,6 +74,6 @@
                     </li>
                 </ul>
             </div>
-        </li>
+        </li> -->
     </ul>
 </nav>
