@@ -49,6 +49,9 @@
                                         <a href="{{ route('categories.edit', $category->id) }}" class="btn btn-sm btn-primary">
                                             Edit
                                         </a>
+                                        <a href="{{ route('categories.delete', $category->id) }}" class="btn btn-sm btn-danger">
+                                            Delete
+                                        </a>
                                     </td>
                                 </tr>
                                 @endforeach

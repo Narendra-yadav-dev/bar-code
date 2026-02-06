@@ -8,7 +8,7 @@ use App\Models\Category;
 class CategoryController extends Controller
 {
     public function index(){
-        $categories = Category::paginate('10');
+        $categories = Category::orderBy('id','desc')->paginate('10');
         return view('categories.index',compact('categories'));
     }
     public function create()
@@ -49,6 +49,12 @@ class CategoryController extends Controller
         $item->update();
 
         return redirect()->route('categories.index')
-            ->with('success', 'Item updated');
+            ->with('success', 'Category updated');
+    }
+    public function delete($id){
+        $category = Category::find($id);
+        $category->delete();
+        return redirect()->route('categories.index')
+            ->with('success', 'Category Deleted');
     }
 }

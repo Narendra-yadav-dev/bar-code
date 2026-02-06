@@ -17,30 +17,34 @@
             <h4 class="card-title">
                 {{ isset($category) ? 'Edit Category' : 'Create Category' }}
             </h4>
-            <form method="POST"
-                action="{{ isset($category)
-                            ? route('categories.update', $category->id)
-                            : route('categories.store') }}">
-
-                @csrf
-                @isset($category)
-                @method('PUT')
-                @endisset
-
-                <div class="mb-3">
-                    <label>Name</label>
-                    <input type="text" name="name"
-                        value="{{ old('name', $category->name ?? '') }}"
-                        class="form-control">
-                    @error('name')
-                        <div class="text-danger">{{$message}}</div>
-                    @enderror
+            <div class="row">
+                <div class="col-md-6">
+                    <form method="POST"
+                        action="{{ isset($category)
+                                    ? route('categories.update', $category->id)
+                                    : route('categories.store') }}">
+        
+                        @csrf
+                        @isset($category)
+                        @method('PUT')
+                        @endisset
+        
+                        <div class="mb-3">
+                            <label>Name</label>
+                            <input type="text" name="name"
+                                value="{{ old('name', $category->name ?? '') }}"
+                                class="form-control">
+                            @error('name')
+                                <div class="text-danger">{{$message}}</div>
+                            @enderror
+                        </div>
+                         <button type="submit" class="btn btn-primary create_category_button_font">
+                            {{ isset($category) ? 'Update Category' : 'Create Category' }}
+                        </button>
+                        <a href="{{route('categories.index')}}" class="btn btn-primary mt-2 create_category_button_font">Back</a>
+                    </form>
                 </div>
-                 <button type="submit" class="btn btn-primary create_category_button_font">
-                    {{ isset($category) ? 'Update Category' : 'Create Category' }}
-                </button>
-                <a href="{{route('categories.index')}}" class="btn btn-primary mt-2 create_category_button_font">Back</a>
-            </form>
+            </div>
         </div>
     </div>
 </div>
