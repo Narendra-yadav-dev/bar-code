@@ -226,7 +226,7 @@
                     <div>{{ $item->extra_data['emergency_phone'] ?? '-' }}</div>
                 </div>
                 <div class="row">
-                    <div class="col-md-12 text-center"> <a href="{{route('index')}}" class="btn btn-primary mt-2 create_category_button_font back-btn">Back</a>
+                    <div class="col-md-12 text-center"> <a href="{{route('reader')}}" class="btn btn-primary mt-2 create_category_button_font back-btn">Back</a>
                     </div>
                 </div>
             </div>

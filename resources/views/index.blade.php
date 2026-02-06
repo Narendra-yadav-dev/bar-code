@@ -5,233 +5,492 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Code Services</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="{{ asset('public/vendors/mdi/css/materialdesignicons.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/vendors/ti-icons/css/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('public/vendors/css/vendor.bundle.base.css') }}">
     <link rel="stylesheet" href="{{ asset('public/vendors/font-awesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <link rel="shortcut icon" href="{{ asset('public/images/favicon.png') }}">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"> -->
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css" />
     <style>
-        .header_bg_color {
-            background-color: rgb(223 227 220 / 79%) !important;
+        body {
+            color: #020202;
+            font-family: Urbanist;
         }
 
-        .contact-icon {
-            width: 40px;
-            height: 40px;
-            background-color: rgb(177 179 175 / 86%) !important;
+        .hero-section {
+            background: linear-gradient(rgb(0 0 0 / 30%), rgba(0, 0, 0, 0.6)), url(public/images/sti.jpeg);
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            flex-direction: column;
         }
 
-        svg {
-            max-width: 100%;
+        .navbar-brand img {
             height: auto;
         }
 
-        .card {
-            transition: transform 0.2s;
-            border: 1px solid #ddd;
+        .ticker-bar {
+            background-color: #0c1a30;
+            color: #f0c419;
+            padding: 10px 0;
+            overflow: hidden;
+            white-space: nowrap;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        .tracking-widest {
+            margin-top: 100px !important;
         }
 
-        .button_bg_color:hover {
-            color: #fff;
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            margin: 0 auto 20px;
+            font-size: 24px;
         }
 
-        .button_bg_color {
-            background: #31639b;
-            background: linear-gradient(119deg, #3378a9 0%, #469b58 100%);
-            color: white;
+        .bg-black-car {
+            background-color: #000;
+            color: #ffcc00;
         }
 
-        .card_a {
-            background-color: #3d8b7f94;
+        .bg-light-green {
+            background-color: #e8f5e9;
+            color: #4caf50;
         }
 
-        .card_b {
-            background-color: #377f9a96;
+        .bg-light-pink {
+            background-color: #fce4ec;
+            color: #f06292;
         }
 
-        .card_c {
-            background-color: #3a858b8c;
+        .feature-title {
+            font-weight: 400;
+            font-size: 20px;
+            margin-bottom: 10px;
         }
 
-        .card_d {
-            background-color: #43956599;
+        ul,
+        ol,
+        dl {
+            font-size: 18px !important;
+        }
+
+        .feature-text {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.6;
+            max-width: 280px;
+            margin: 0 auto 15px;
+        }
+
+        .learn-more {
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+            transition: opacity 0.2s;
+        }
+
+        .learn-more:hover {
+            opacity: 0.7;
+        }
+
+        .text-gold {
+            color: #d4af37;
+        }
+
+        .text-green {
+            color: #81c784;
+        }
+
+        .text-pink {
+            color: #f06292;
+        }
+
+        hr.custom-divider {
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin-top: 30px;
+        }
+
+        .product-tagline {
+            color: #888;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .main-title {
+            color: #2c3e50;
+            font-weight: 700;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .feature-item {
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .feature-item small {
+            display: block;
+            color: #6c757d;
+            font-weight: 400;
+        }
+
+        .btn-yellow {
+            background-color: #e6e9e2;
+            padding: 12px;
+        }
+
+        .btn,
+        .ajax-upload-dragdrop .ajax-file-upload {
+            font-size: 18px !important;
+        }
+
+        .btn-yellow:hover {
+            background-color: #e6e9e2;
+        }
+
+        .phone-mockup-container {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .phone-img {
+            width: 100%;
+            height: auto;
+        }
+
+        .display-4 {
+            font-size: 45px !important;
+        }
+
+        .indicator-line {
+            border-top: 2px dashed #ccc;
+            position: absolute;
+        }
+
+        p {
+            font-size: 18px !important;
+        }
+
+        h6,
+        .h6 {
+            font-size: 25px !important;
+        }
+
+        .footer-custom {
+            background-color: #1e2227;
+            padding: 60px 0;
+            font-size: 18px;
+        }
+
+        .footer-logo {
+            max-width: 180px;
+            margin-bottom: 20px;
+        }
+
+        .footer-custom h5 {
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-custom a {
+            color: #adb5bd;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            transition: 0.3s;
+        }
+
+        .footer-custom a:hover {
+            color: #ffffff;
+        }
+
+        small,
+        .small {
+            font-size: 20px !important;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        .app-store-btns img {
+            height: 35px;
+            margin-right: 5px;
+        }
+
+        .mobile_sidebaar_bg_color {
+            background-color: #989d928f !important;
         }
 
         @media (max-width: 991px) {
-            .destop_responsive {
-                display: none !important;
+            .responsive_class {
+                padding: 0px;
             }
 
-            section.main.py-5 {
+            .footer-logo {
+                width: 110px;
+            }
+
+            .footer-custom {
+                padding: 36px 0;
+            }
+
+            .available_padding {
+                margin-top: 0px !important;
+            }
+
+            .main2 {
                 padding: 0px !important;
             }
 
-            .destop_responsive_h_text {
-                font-size: 28px !important;
+            .offcanvas {
+                width: 280px !important;
             }
 
-            .destop_responsive_p_text {
-                font-size: 28px !important;
+            .nav-link {
+                padding: 15px 0 !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             }
-
-            .destop_responsive_img_text {
-                width: 150px !important;
-                height: 150px !important;
-            }
+              .display-4 {
+            font-size: 28px !important;
+        }
+.tracking-widest {
+    margin-top: 10px !important;
+}
+        h6,
+        .h6 {
+            font-size: 16px !important;
+        }
         }
 
         @media (min-width: 992px) {
-            .mobile_responsive {
-                display: none !important;
+            .offcanvas {
+                visibility: visible !important;
+                transform: none !important;
+                position: static !important;
+                background: transparent !important;
+                width: auto !important;
+                border: none !important;
             }
 
+            .offcanvas-header {
+                display: none;
+            }
+
+            .offcanvas-body {
+                padding: 0;
+                display: flex;
+                overflow: visible;
+            }
         }
     </style>
 </head>
 
 <body>
-    <header class="header-container header_bg_color">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-12 col-md-12 mb-3 mb-md-0 text-center">
-                    <a href="index.php" class="text-decoration-none text-white">
-                        <img src="{{asset('public/images/logo1.png')}}" width="100px" height="auto">
-                    </a>
+    <scetion class="main section-frame">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent position-absolute w-100">
+            <div class="container">
+                <a class="navbar-brand font-weight-bold" href="#">
+                    <img src="public/images/logo1.png" width="100" height="100" alt="Logo">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end mobile_sidebaar_bg_color" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title text-white" id="offcanvasNavbarLabel">Menu</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 text-uppercase small">
+                            <li class="nav-item"><a class="nav-link text-white me-lg-5" href="#">Home</a></li>
+                            <li class="nav-item"><a class="nav-link text-white me-lg-5" href="#">About</a></li>
+                            <li class="nav-item"><a class="nav-link text-white me-lg-5" href="#">Products</a></li>
+                            <li class="nav-item"><a class="nav-link text-white me-lg-5" href="{{route('reader')}}">QR Code Reader</a></li>
+                        </ul>
+                        <div class="d-lg-none mt-3 text-white">
+                            <i class="fi fi-in"></i> India (IN)
+                        </div>
+                    </div>
+                </div>
+                <div class="d-none d-lg-block text-white">
+                    <i class="fi fi-in"></i>
                 </div>
             </div>
+        </nav>
+        <header class="hero-section justify-content-center d-flex text-center px-3">
+            <div class="container">
+                <h6 class="text-uppercase tracking-widest mb-4 text-white">Welcome to the world of privacy!</h6>
+                <h1 class="display-4 mb-4 text-white">Allow people to contact you in case of <br class="d-none d-md-block"> any issue with your parked vehicle.</h1>
+            </div>
+        </header>
+    </scetion>
+    <section class="main1 pt-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-normal">Car Sampark Tag, Features.</h2>
+            </div>
+            <div class="row text-center g-4">
+                <div class="col-md-4">
+                    <div class="feature-icon d-flex align-items-center justify-content-center bg-black-car">
+                        <i class="fa fa-car"></i>
+                    </div>
+                    <h3 class="feature-title">Car & Bike Sampark tag</h3>
+                    <p class="feature-text">
+                        Your contact details will not be shared, but anyone who has any issue with your parked vehicle can contact you.
+                    </p>
+                    <a href="#" class="learn-more text-gold">Learn More →</a>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-icon d-flex align-items-center justify-content-center bg-light-green">
+                        <i class="fa fa-phone"></i>
+                    </div>
+                    <h3 class="feature-title">Masked Calls</h3>
+                    <p class="feature-text">
+                        Your phone number is kept private, you will get Masked Calls, SMS and WhatsApp.
+                    </p>
+                    <a href="#" class="learn-more text-green">Learn More →</a>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-icon d-flex align-items-center justify-content-center bg-light-pink">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <h3 class="feature-title">instant PDF delivery</h3>
+                    <p class="feature-text">
+                        Need instant delivery, get instant delivery on your WhatsApp and Email as a PDF. Works offline as well.
+                    </p>
+                    <a href="#" class="learn-more text-pink">Learn More →</a>
+                </div>
+            </div>
+            <hr class="custom-divider">
         </div>
-    </header>
-    <section class="main py-5">
+    </section>
+    <section class="main2 py-5">
         <div class="container">
-            <div
-                class="col-12 col-lg-4 d-flex align-items-center justify-content-center order-last order-lg-0 py-4 py-lg-0 mobile_responsive">
-                <div class="text-center">
-                    <button type="button" class="btn button_bg_color btn-lg px-5">Scan Qr Code</button>
-                </div>
-            </div>
-            <div class="row g-4 justify-content-center">
-                <div class="col-12 col-md-6 col-lg-2">
-                    <div class="card h-100 shadow-sm card_a">
-                        <h5 class="text-center my-3 destop_responsive_h_text"><i class="mdi mdi-dog-side menu-icon me-2"></i>Dogs</h5>
-                        <div class="text-center px-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="destop_responsive_img_text" viewBox="0 0 50 50" width="100" height="100">
-                                <rect x="0" y="0" width="50" height="50" fill="#ffffff"></rect>
-                                <g transform="scale(1.724)">
-                                    <g transform="translate(0,0)">
-                                        <path fill-rule="evenodd"
-                                            d="M10 0L10 2L11 2L11 0ZM12 0L12 1L13 1L13 2L12 2L12 4L13 4L13 5L11 5L11 6L10 6L10 4L11 4L11 3L8 3L8 4L9 4L9 5L8 5L8 7L9 7L9 8L6 8L6 9L5 9L5 8L0 8L0 10L1 10L1 9L2 9L2 15L0 15L0 16L1 16L1 17L0 17L0 21L1 21L1 17L3 17L3 16L2 16L2 15L3 15L3 14L4 14L4 17L9 17L9 18L10 18L10 22L9 22L9 19L7 19L7 18L4 18L4 19L7 19L7 20L6 20L6 21L8 21L8 23L10 23L10 24L11 24L11 25L10 25L10 28L12 28L12 29L13 29L13 27L16 27L16 28L17 28L17 29L18 29L18 28L17 28L17 27L16 27L16 26L15 26L15 24L14 24L14 26L13 26L13 24L12 24L12 23L13 23L13 22L15 22L15 23L16 23L16 24L17 24L17 25L18 25L18 27L20 27L20 28L21 28L21 29L22 29L22 28L21 28L21 25L25 25L25 26L22 26L22 27L23 27L23 29L24 29L24 27L25 27L25 28L26 28L26 29L27 29L27 28L28 28L28 26L29 26L29 24L28 24L28 23L27 23L27 22L29 22L29 20L28 20L28 19L27 19L27 16L28 16L28 15L27 15L27 12L28 12L28 11L27 11L27 12L25 12L25 13L21 13L21 12L22 12L22 11L23 11L23 12L24 12L24 11L25 11L25 9L26 9L26 8L25 8L25 9L24 9L24 8L23 8L23 9L22 9L22 8L21 8L21 4L18 4L18 3L17 3L17 2L18 2L18 1L20 1L20 2L19 2L19 3L20 3L20 2L21 2L21 0L16 0L16 1L15 1L15 0L14 0L14 1L13 1L13 0ZM8 1L8 2L9 2L9 1ZM14 1L14 2L13 2L13 3L14 3L14 5L13 5L13 7L12 7L12 6L11 6L11 7L12 7L12 9L11 9L11 8L10 8L10 9L9 9L9 10L8 10L8 9L6 9L6 10L8 10L8 13L9 13L9 14L8 14L8 16L9 16L9 17L10 17L10 18L11 18L11 22L10 22L10 23L11 23L11 22L13 22L13 21L14 21L14 20L15 20L15 19L14 19L14 18L19 18L19 19L16 19L16 20L18 20L18 21L15 21L15 22L18 22L18 21L19 21L19 22L20 22L20 20L22 20L22 19L23 19L23 20L24 20L24 19L25 19L25 21L26 21L26 20L27 20L27 19L25 19L25 18L24 18L24 19L23 19L23 18L22 18L22 17L26 17L26 16L27 16L27 15L26 15L26 13L25 13L25 16L24 16L24 15L23 15L23 16L22 16L22 14L21 14L21 15L20 15L20 14L18 14L18 15L17 15L17 16L15 16L15 17L14 17L14 15L12 15L12 17L10 17L10 16L11 16L11 14L14 14L14 13L15 13L15 11L14 11L14 10L16 10L16 11L17 11L17 12L16 12L16 13L17 13L17 12L19 12L19 13L20 13L20 12L21 12L21 8L20 8L20 5L18 5L18 4L17 4L17 3L16 3L16 2L15 2L15 1ZM14 2L14 3L15 3L15 4L16 4L16 5L14 5L14 9L12 9L12 10L14 10L14 9L15 9L15 6L16 6L16 8L17 8L17 9L16 9L16 10L17 10L17 9L18 9L18 10L20 10L20 8L19 8L19 6L18 6L18 8L17 8L17 4L16 4L16 3L15 3L15 2ZM9 6L9 7L10 7L10 6ZM18 8L18 9L19 9L19 8ZM27 8L27 9L28 9L28 10L29 10L29 9L28 9L28 8ZM10 9L10 11L11 11L11 9ZM4 10L4 11L3 11L3 12L4 12L4 14L5 14L5 10ZM23 10L23 11L24 11L24 10ZM0 11L0 12L1 12L1 11ZM6 11L6 12L7 12L7 11ZM12 11L12 13L14 13L14 12L13 12L13 11ZM19 11L19 12L20 12L20 11ZM9 12L9 13L11 13L11 12ZM6 13L6 14L7 14L7 13ZM28 13L28 14L29 14L29 13ZM5 15L5 16L7 16L7 15ZM9 15L9 16L10 16L10 15ZM17 16L17 17L18 17L18 16ZM12 17L12 18L14 18L14 17ZM19 17L19 18L21 18L21 19L22 19L22 18L21 18L21 17ZM28 17L28 18L29 18L29 17ZM2 18L2 21L5 21L5 20L3 20L3 18ZM12 19L12 21L13 21L13 19ZM19 19L19 20L20 20L20 19ZM21 21L21 24L24 24L24 21ZM22 22L22 23L23 23L23 22ZM17 23L17 24L18 24L18 25L20 25L20 24L19 24L19 23ZM26 23L26 24L25 24L25 25L26 25L26 24L27 24L27 25L28 25L28 24L27 24L27 23ZM8 24L8 29L9 29L9 24ZM11 25L11 27L12 27L12 25ZM25 26L25 27L26 27L26 28L27 28L27 26ZM14 28L14 29L15 29L15 28ZM0 0L0 7L7 7L7 0ZM1 1L1 6L6 6L6 1ZM2 2L2 5L5 5L5 2ZM22 0L22 7L29 7L29 0ZM23 1L23 6L28 6L28 1ZM24 2L24 5L27 5L27 2ZM0 22L0 29L7 29L7 22ZM1 23L1 28L6 28L6 23ZM2 24L2 27L5 27L5 24Z"
-                                            fill="#000000"></path>
-                                    </g>
-                                </g>
-                            </svg>
-                        </div>
-                        <p class="text-center small mt-3 px-2 destop_responsive_p_text">Emergency contact: Scan here.</p>
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 col-md-6">
+                    <p class="product-tagline mb-2 text-uppercase">The Car Parking Tag.</p>
+                    <h1 class="main-title display-5 mb-4">Masked Calls, SMS, WhatsApp and Emergency Help.</h1>
+                    <ul class="feature-list mb-4">
+                        <li class="feature-item">
+                            <span class="text-black"><i class="fas fa-chevron-down"></i></span> Upload Files
+                        </li>
+                        <li class="feature-item">
+                            <span class="text-black"><i class="fas fa-chevron-down"></i></span> Vehicle IN and Out Logs
+                        </li>
+                        <li class="feature-item">
+                            <span class="text-black"><i class="fas fa-chevron-down"></i></span> One time Buy
+                        </li>
+                    </ul>
+                    <div class="mb-3">
+                        <img src="public/images/amazonbuy.png" class="img-fluid" alt="Buy now on Amazon" width="20%" height="auto">
+                    </div>
+                    <div class="d-grid gap-2 col-md-8">
+                        <button class="btn btn-yellow border-none fw-bold rounded-3" type="button">
+                            <i class="bi bi-cart"></i> Add to Cart
+                        </button>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-2">
-                    <div class="card h-100 shadow-sm card_b">
-                        <h5 class="text-center my-3 destop_responsive_h_text"><i class="mdi mdi-car menu-icon me-2"></i>Car</h5>
-                        <div class="text-center px-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="destop_responsive_img_text" viewBox="0 0 50 50" width="100" height="100">
-                                <rect x="0" y="0" width="50" height="50" fill="#ffffff" class="destop_responsive_img_text"></rect>
-                                <g transform="scale(1.724)">
-                                    <path
-                                        d="M10 0L10 1L8 1L8 3L9 3L9 4L8 4L8 8L6 8L6 9L4 9L4 8L3 8L3 9L2 9L2 8L0 8L0 10L1 10L1 9L2 9L2 11L3 11L3 9L4 9L4 12L5 12L5 13L4 13L4 14L2 14L2 15L4 15L4 14L6 14L6 15L5 15L5 16L4 16L4 17L3 17L3 16L2 16L2 17L3 17L3 18L2 18L2 19L4 19L4 21L5 21L5 19L4 19L4 17L5 17L5 16L6 16L6 17L7 17L7 18L6 18L6 19L7 19L7 18L9 18L9 19L8 19L8 20L9 20L9 21L8 21L8 23L9 23L9 22L12 22L12 21L10 21L10 18L11 18L11 19L12 19L12 20L13 20L13 17L14 17L14 19L15 19L15 17L16 17L16 16L17 16L17 17L18 17L18 18L16 18L16 20L20 20L20 21L19 21L19 22L18 22L18 21L17 21L17 22L16 22L16 24L15 24L15 20L14 20L14 22L13 22L13 24L12 24L12 25L10 25L10 24L11 24L11 23L10 23L10 24L9 24L9 25L8 25L8 26L9 26L9 27L8 27L8 29L10 29L10 28L9 28L9 27L11 27L11 26L12 26L12 28L11 28L11 29L16 29L16 28L17 28L17 29L18 29L18 28L19 28L19 29L21 29L21 27L22 27L22 26L24 26L24 28L23 28L23 29L24 29L24 28L25 28L25 29L26 29L26 28L25 28L25 26L28 26L28 27L27 27L27 29L28 29L28 27L29 27L29 26L28 26L28 25L25 25L25 20L24 20L24 17L22 17L22 16L24 16L24 15L25 15L25 17L26 17L26 15L27 15L27 17L28 17L28 18L27 18L27 20L26 20L26 22L27 22L27 23L26 23L26 24L27 24L27 23L28 23L28 24L29 24L29 23L28 23L28 22L29 22L29 21L27 21L27 20L29 20L29 17L28 17L28 15L29 15L29 14L27 14L27 13L29 13L29 12L28 12L28 10L29 10L29 9L28 9L28 8L26 8L26 9L25 9L25 8L22 8L22 9L21 9L21 10L19 10L19 11L18 11L18 12L17 12L17 11L16 11L16 12L15 12L15 14L14 14L14 13L13 13L13 14L14 14L14 15L13 15L13 16L12 16L12 12L14 12L14 9L15 9L15 10L18 10L18 9L17 9L17 8L18 8L18 7L19 7L19 6L20 6L20 8L19 8L19 9L20 9L20 8L21 8L21 6L20 6L20 5L19 5L19 4L20 4L20 2L21 2L21 1L20 1L20 0L13 0L13 1L14 1L14 3L12 3L12 7L11 7L11 4L10 4L10 3L9 3L9 2L11 2L11 0ZM16 1L16 3L17 3L17 7L16 7L16 6L15 6L15 5L16 5L16 4L15 4L15 5L14 5L14 4L13 4L13 7L12 7L12 8L13 8L13 9L14 9L14 6L15 6L15 7L16 7L16 8L15 8L15 9L16 9L16 8L17 8L17 7L18 7L18 3L19 3L19 2L20 2L20 1L19 1L19 2L18 2L18 1ZM17 2L17 3L18 3L18 2ZM9 5L9 8L8 8L8 9L6 9L6 10L7 10L7 11L6 11L6 12L7 12L7 11L8 11L8 12L9 12L9 14L8 14L8 15L6 15L6 16L7 16L7 17L9 17L9 18L10 18L10 17L11 17L11 18L12 18L12 16L10 16L10 17L9 17L9 14L11 14L11 13L10 13L10 12L9 12L9 11L11 11L11 8L10 8L10 5ZM9 9L9 10L10 10L10 9ZM23 9L23 11L22 11L22 10L21 10L21 11L22 11L22 12L23 12L23 13L22 13L22 15L20 15L20 14L19 14L19 13L21 13L21 12L20 12L20 11L19 11L19 13L16 13L16 14L15 14L15 15L14 15L14 17L15 17L15 15L20 15L20 16L22 16L22 15L24 15L24 14L25 14L25 15L26 15L26 13L27 13L27 12L26 12L26 13L25 13L25 12L23 12L23 11L24 11L24 10L25 10L25 9ZM26 9L26 10L28 10L28 9ZM0 11L0 12L1 12L1 11ZM6 13L6 14L7 14L7 13ZM0 14L0 15L1 15L1 14ZM0 16L0 17L1 17L1 16ZM18 16L18 17L19 17L19 19L20 19L20 20L23 20L23 19L22 19L22 17L19 17L19 16ZM0 18L0 19L1 19L1 18ZM20 18L20 19L21 19L21 18ZM25 18L25 19L26 19L26 18ZM0 20L0 21L1 21L1 20ZM2 20L2 21L3 21L3 20ZM6 20L6 21L7 21L7 20ZM21 21L21 24L24 24L24 21ZM19 22L19 24L18 24L18 23L17 23L17 24L18 24L18 26L19 26L19 25L20 25L20 22ZM22 22L22 23L23 23L23 22ZM13 24L13 27L15 27L15 28L16 28L16 25L15 25L15 24ZM14 25L14 26L15 26L15 25ZM21 25L21 26L22 26L22 25ZM0 0L0 7L7 7L7 0ZM1 1L1 6L6 6L6 1ZM2 2L2 5L5 5L5 2ZM22 0L22 7L29 7L29 0ZM23 1L23 6L28 6L28 1ZM24 2L24 5L27 5L27 2ZM0 22L0 29L7 29L7 22ZM1 23L1 28L6 28L6 23ZM2 24L2 27L5 27L5 24Z"
-                                        fill="#000000" fill-rule="evenodd" />
-                                </g>
-                            </svg>
-                        </div>
-                        <p class="text-center small mt-3 px-2 destop_responsive_p_text">Scan to call owner (number protected)</p>
-                    </div>
-                </div>
-                <div
-                    class="col-12 col-lg-4 d-flex align-items-center justify-content-center order-last order-lg-0 py-4 py-lg-0 destop_responsive">
-                    <div class="text-center">
-                        <button type="button" class="btn button_bg_color btn-lg px-5" id="startScan">Scan Qr Code</button>
-                        <div id="reader" style="width:300px; display:none;" class="scan_qr_code mt-3"></div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-2">
-                    <div class="card h-100 shadow-sm card_c">
-                        <h5 class="text-center my-3 destop_responsive_h_text"><i class="mdi mdi-bike menu-icon me-2"></i>Bike</h5>
-                        <div class="text-center px-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="destop_responsive_img_text" viewBox="0 0 50 50" width="100" height="100">
-                                <rect x="0" y="0" width="50" height="50" fill="#ffffff" class="destop_responsive_img_text"></rect>
-                                <g transform="scale(1.724)">
-                                    <path
-                                        d="M10 0L10 1L8 1L8 3L9 3L9 4L8 4L8 8L6 8L6 9L4 9L4 8L3 8L3 9L2 9L2 8L0 8L0 10L1 10L1 9L2 9L2 11L3 11L3 9L4 9L4 12L5 12L5 13L4 13L4 14L2 14L2 15L4 15L4 14L6 14L6 15L5 15L5 16L4 16L4 17L3 17L3 16L2 16L2 17L3 17L3 18L2 18L2 19L4 19L4 21L5 21L5 19L4 19L4 17L5 17L5 16L6 16L6 17L7 17L7 18L6 18L6 19L7 19L7 18L9 18L9 19L8 19L8 20L9 20L9 21L8 21L8 23L9 23L9 22L12 22L12 21L10 21L10 18L11 18L11 19L12 19L12 20L13 20L13 17L14 17L14 19L15 19L15 17L16 17L16 16L17 16L17 17L18 17L18 18L16 18L16 20L20 20L20 21L19 21L19 22L18 22L18 21L17 21L17 22L16 22L16 24L15 24L15 20L14 20L14 22L13 22L13 24L12 24L12 25L10 25L10 24L11 24L11 23L10 23L10 24L9 24L9 25L8 25L8 26L9 26L9 27L8 27L8 29L10 29L10 28L9 28L9 27L11 27L11 26L12 26L12 28L11 28L11 29L16 29L16 28L17 28L17 29L18 29L18 28L19 28L19 29L21 29L21 27L22 27L22 26L24 26L24 28L23 28L23 29L24 29L24 28L25 28L25 29L26 29L26 28L25 28L25 26L28 26L28 27L27 27L27 29L28 29L28 27L29 27L29 26L28 26L28 25L25 25L25 20L24 20L24 17L22 17L22 16L24 16L24 15L25 15L25 17L26 17L26 15L27 15L27 17L28 17L28 18L27 18L27 20L26 20L26 22L27 22L27 23L26 23L26 24L27 24L27 23L28 23L28 24L29 24L29 23L28 23L28 22L29 22L29 21L27 21L27 20L29 20L29 17L28 17L28 15L29 15L29 14L27 14L27 13L29 13L29 12L28 12L28 10L29 10L29 9L28 9L28 8L26 8L26 9L25 9L25 8L22 8L22 9L21 9L21 10L19 10L19 11L18 11L18 12L17 12L17 11L16 11L16 12L15 12L15 14L14 14L14 13L13 13L13 14L14 14L14 15L13 15L13 16L12 16L12 12L14 12L14 9L15 9L15 10L18 10L18 9L17 9L17 8L18 8L18 7L19 7L19 6L20 6L20 8L19 8L19 9L20 9L20 8L21 8L21 6L20 6L20 5L19 5L19 4L20 4L20 2L21 2L21 1L20 1L20 0L13 0L13 1L14 1L14 3L12 3L12 7L11 7L11 4L10 4L10 3L9 3L9 2L11 2L11 0ZM16 1L16 3L17 3L17 7L16 7L16 6L15 6L15 5L16 5L16 4L15 4L15 5L14 5L14 4L13 4L13 7L12 7L12 8L13 8L13 9L14 9L14 6L15 6L15 7L16 7L16 8L15 8L15 9L16 9L16 8L17 8L17 7L18 7L18 3L19 3L19 2L20 2L20 1L19 1L19 2L18 2L18 1ZM17 2L17 3L18 3L18 2ZM9 5L9 8L8 8L8 9L6 9L6 10L7 10L7 11L6 11L6 12L7 12L7 11L8 11L8 12L9 12L9 14L8 14L8 15L6 15L6 16L7 16L7 17L9 17L9 18L10 18L10 17L11 17L11 18L12 18L12 16L10 16L10 17L9 17L9 14L11 14L11 13L10 13L10 12L9 12L9 11L11 11L11 8L10 8L10 5ZM9 9L9 10L10 10L10 9ZM23 9L23 11L22 11L22 10L21 10L21 11L22 11L22 12L23 12L23 13L22 13L22 15L20 15L20 14L19 14L19 13L21 13L21 12L20 12L20 11L19 11L19 13L16 13L16 14L15 14L15 15L14 15L14 17L15 17L15 15L20 15L20 16L22 16L22 15L24 15L24 14L25 14L25 15L26 15L26 13L27 13L27 12L26 12L26 13L25 13L25 12L23 12L23 11L24 11L24 10L25 10L25 9ZM26 9L26 10L28 10L28 9ZM0 11L0 12L1 12L1 11ZM6 13L6 14L7 14L7 13ZM0 14L0 15L1 15L1 14ZM0 16L0 17L1 17L1 16ZM18 16L18 17L19 17L19 19L20 19L20 20L23 20L23 19L22 19L22 17L19 17L19 16ZM0 18L0 19L1 19L1 18ZM20 18L20 19L21 19L21 18ZM25 18L25 19L26 19L26 18ZM0 20L0 21L1 21L1 20ZM2 20L2 21L3 21L3 20ZM6 20L6 21L7 21L7 20ZM21 21L21 24L24 24L24 21ZM19 22L19 24L18 24L18 23L17 23L17 24L18 24L18 26L19 26L19 25L20 25L20 22ZM22 22L22 23L23 23L23 22ZM13 24L13 27L15 27L15 28L16 28L16 25L15 25L15 24ZM14 25L14 26L15 26L15 25ZM21 25L21 26L22 26L22 25ZM0 0L0 7L7 7L7 0ZM1 1L1 6L6 6L6 1ZM2 2L2 5L5 5L5 2ZM22 0L22 7L29 7L29 0ZM23 1L23 6L28 6L28 1ZM24 2L24 5L27 5L27 2ZM0 22L0 29L7 29L7 22ZM1 23L1 28L6 28L6 23ZM2 24L2 27L5 27L5 24Z"
-                                        fill="#000000" fill-rule="evenodd" />
-                                </g>
-                            </svg>
-                        </div>
-                        <p class="text-center small mt-3 px-2 destop_responsive_p_text">Scan to Contact Owner</p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-2">
-                    <div class="card h-100 shadow-sm card_d">
-                        <h5 class="text-center my-3 destop_responsive_h_text"><i class="mdi mdi-bag-suitcase menu-icon me-2"></i>Luggage</h5>
-                        <div class="text-center px-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="destop_responsive_img_text" viewBox="0 0 50 50" width="100" height="100">
-                                <rect x="0" y="0" width="50" height="50" fill="#ffffff" class="destop_responsive_img_text"></rect>
-                                <g transform="scale(1.724)">
-                                    <path
-                                        d="M10 0L10 1L8 1L8 3L9 3L9 4L8 4L8 8L6 8L6 9L4 9L4 8L3 8L3 9L2 9L2 8L0 8L0 10L1 10L1 9L2 9L2 11L3 11L3 9L4 9L4 12L5 12L5 13L4 13L4 14L2 14L2 15L4 15L4 14L6 14L6 15L5 15L5 16L4 16L4 17L3 17L3 16L2 16L2 17L3 17L3 18L2 18L2 19L4 19L4 21L5 21L5 19L4 19L4 17L5 17L5 16L6 16L6 17L7 17L7 18L6 18L6 19L7 19L7 18L9 18L9 19L8 19L8 20L9 20L9 21L8 21L8 23L9 23L9 22L12 22L12 21L10 21L10 18L11 18L11 19L12 19L12 20L13 20L13 17L14 17L14 19L15 19L15 17L16 17L16 16L17 16L17 17L18 17L18 18L16 18L16 20L20 20L20 21L19 21L19 22L18 22L18 21L17 21L17 22L16 22L16 24L15 24L15 20L14 20L14 22L13 22L13 24L12 24L12 25L10 25L10 24L11 24L11 23L10 23L10 24L9 24L9 25L8 25L8 26L9 26L9 27L8 27L8 29L10 29L10 28L9 28L9 27L11 27L11 26L12 26L12 28L11 28L11 29L16 29L16 28L17 28L17 29L18 29L18 28L19 28L19 29L21 29L21 27L22 27L22 26L24 26L24 28L23 28L23 29L24 29L24 28L25 28L25 29L26 29L26 28L25 28L25 26L28 26L28 27L27 27L27 29L28 29L28 27L29 27L29 26L28 26L28 25L25 25L25 20L24 20L24 17L22 17L22 16L24 16L24 15L25 15L25 17L26 17L26 15L27 15L27 17L28 17L28 18L27 18L27 20L26 20L26 22L27 22L27 23L26 23L26 24L27 24L27 23L28 23L28 24L29 24L29 23L28 23L28 22L29 22L29 21L27 21L27 20L29 20L29 17L28 17L28 15L29 15L29 14L27 14L27 13L29 13L29 12L28 12L28 10L29 10L29 9L28 9L28 8L26 8L26 9L25 9L25 8L22 8L22 9L21 9L21 10L19 10L19 11L18 11L18 12L17 12L17 11L16 11L16 12L15 12L15 14L14 14L14 13L13 13L13 14L14 14L14 15L13 15L13 16L12 16L12 12L14 12L14 9L15 9L15 10L18 10L18 9L17 9L17 8L18 8L18 7L19 7L19 6L20 6L20 8L19 8L19 9L20 9L20 8L21 8L21 6L20 6L20 5L19 5L19 4L20 4L20 2L21 2L21 1L20 1L20 0L13 0L13 1L14 1L14 3L12 3L12 7L11 7L11 4L10 4L10 3L9 3L9 2L11 2L11 0ZM16 1L16 3L17 3L17 7L16 7L16 6L15 6L15 5L16 5L16 4L15 4L15 5L14 5L14 4L13 4L13 7L12 7L12 8L13 8L13 9L14 9L14 6L15 6L15 7L16 7L16 8L15 8L15 9L16 9L16 8L17 8L17 7L18 7L18 3L19 3L19 2L20 2L20 1L19 1L19 2L18 2L18 1ZM17 2L17 3L18 3L18 2ZM9 5L9 8L8 8L8 9L6 9L6 10L7 10L7 11L6 11L6 12L7 12L7 11L8 11L8 12L9 12L9 14L8 14L8 15L6 15L6 16L7 16L7 17L9 17L9 18L10 18L10 17L11 17L11 18L12 18L12 16L10 16L10 17L9 17L9 14L11 14L11 13L10 13L10 12L9 12L9 11L11 11L11 8L10 8L10 5ZM9 9L9 10L10 10L10 9ZM23 9L23 11L22 11L22 10L21 10L21 11L22 11L22 12L23 12L23 13L22 13L22 15L20 15L20 14L19 14L19 13L21 13L21 12L20 12L20 11L19 11L19 13L16 13L16 14L15 14L15 15L14 15L14 17L15 17L15 15L20 15L20 16L22 16L22 15L24 15L24 14L25 14L25 15L26 15L26 13L27 13L27 12L26 12L26 13L25 13L25 12L23 12L23 11L24 11L24 10L25 10L25 9ZM26 9L26 10L28 10L28 9ZM0 11L0 12L1 12L1 11ZM6 13L6 14L7 14L7 13ZM0 14L0 15L1 15L1 14ZM0 16L0 17L1 17L1 16ZM18 16L18 17L19 17L19 19L20 19L20 20L23 20L23 19L22 19L22 17L19 17L19 16ZM0 18L0 19L1 19L1 18ZM20 18L20 19L21 19L21 18ZM25 18L25 19L26 19L26 18ZM0 20L0 21L1 21L1 20ZM2 20L2 21L3 21L3 20ZM6 20L6 21L7 21L7 20ZM21 21L21 24L24 24L24 21ZM19 22L19 24L18 24L18 23L17 23L17 24L18 24L18 26L19 26L19 25L20 25L20 22ZM22 22L22 23L23 23L23 22ZM13 24L13 27L15 27L15 28L16 28L16 25L15 25L15 24ZM14 25L14 26L15 26L15 25ZM21 25L21 26L22 26L22 25ZM0 0L0 7L7 7L7 0ZM1 1L1 6L6 6L6 1ZM2 2L2 5L5 5L5 2ZM22 0L22 7L29 7L29 0ZM23 1L23 6L28 6L28 1ZM24 2L24 5L27 5L27 2ZM0 22L0 29L7 29L7 22ZM1 23L1 28L6 28L6 23ZM2 24L2 27L5 27L5 24Z"
-                                        fill="#000000" fill-rule="evenodd" />
-                                </g>
-                            </svg>
-                        </div>
-                        <p class="text-center small mt-3 px-2 destop_responsive_p_text">Scan for Safe Return</p>
+                <div class="col-lg-6 col-md-6 text-center">
+                    <div class="phone-mockup-container position-relative">
+                        <img src="public/images/phone_image.png" alt="NGF132 App Interface" class="phone-img rounded-4">
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <script src="https://unpkg.com/html5-qrcode"></script>
-
-    <script src="{{ asset('public/vendors/js/vendor.bundle.base.js') }}"></script>
-
-    <script src="{{ asset('public/vendors/chart.js/chart.umd.js') }}"></script>
-    <script src="{{ asset('public/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js') }}"></script>
-
-    <script src="{{ asset('public/js/off-canvas.js') }}"></script>
-    <script src="{{ asset('public/js/misc.js') }}"></script>
-    <script src="{{ asset('public/js/settings.js') }}"></script>
-    <script src="{{ asset('public/js/todolist.js') }}"></script>
-    <script src="{{ asset('public/js/jquery.cookie.js') }}"></script>
-    <script>
-        const scanBtn = document.getElementById('startScan');
-        const readerDiv = document.getElementById('reader');
-
-        scanBtn.addEventListener('click', () => {
-            readerDiv.style.display = 'block';
-
-            const html5QrCode = new Html5Qrcode("reader");
-
-            html5QrCode.start({
-                    facingMode: "environment"
-                }, // back camera
-                {
-                    fps: 10,
-                    qrbox: 250
-                },
-                qrCodeMessage => {
-                    console.log("QR Code:", qrCodeMessage);
-
-                    html5QrCode.stop();
-                    window.location.href = qrCodeMessage;
-                },
-                errorMessage => {}
-            );
-        });
-    </script>
+    <section class="py-5 bg-white responsive_class">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6">
+                    <p class="text-uppercase fw-bold text-muted small mb-1">We Are</p>
+                    <h2 class="fw-bold display-6 mb-3" style="color: #2c3e50;">
+                        We are available on Amazon, Flipkart and in your heart.
+                    </h2>
+                </div>
+                <div class="col-lg-6">
+                    <p class="text-muted fs-5">
+                        Try our service online and get free, fast delivery.
+                    </p>
+                </div>
+            </div>
+            <div class="row row-cols-2 row-cols-md-4 g-4 mt-4 justify-content-center available_padding">
+                <div class="col text-center">
+                    <div class="p-3 shadow-sm border rounded-3 h-100 d-flex align-items-center justify-content-center">
+                        <img src="public/images/amazonbuy.png" class="img-fluid" alt="Buy now on Amazon" width="80%" height="auto">
+                    </div>
+                </div>
+                <div class="col text-center">
+                    <div class="p-3 shadow-sm border rounded-3 h-100 d-flex align-items-center justify-content-center">
+                        <img src="public/images/flipkart.png" class="img-fluid" alt="Flipkart" width="80%" height="auto">
+                    </div>
+                </div>
+                <div class="col text-center">
+                    <div class="p-3 shadow-sm border rounded-3 h-100 d-flex align-items-center justify-content-center">
+                        <img src="public/images/google.png" class="img-fluid" alt="Get it on Google Play" width="80%" height="auto">
+                    </div>
+                </div>
+                <div class="col text-center">
+                    <div class="p-3 shadow-sm border rounded-3 h-100 d-flex align-items-center justify-content-center">
+                        <img src="public/images/app.png" class="img-fluid" alt="Download on App Store" width="80%" height="auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer-custom text-white">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="rounded mb-3 d-inline-block">
+                        <img src="public/images/logo1.png" alt="SAMPARK.me" class="footer-logo mb-0">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Get in Touch</h5>
+                    <p class="mb-1 text-secondary">GCC Noida, India</p>
+                    <p class="mb-3 text-secondary">UP 201301</p>
+                    <a href="mailto:hello@ngf132.com">hello@ngf132.com</a>
+                    <a href="tel:+919034664487">+91 9034 6644 87</a>
+                    <div class="mt-3">
+                        <span class="text-secondary"><img src="https://flagcdn.com/w20/in.png" width="20" class="me-2">Update location</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Learn More</h5>
+                    <a href="#">About Us</a>
+                    <a href="#">Contact</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Franchise Management</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5>Company</h5>
+                    <a href="#">Business Terms</a>
+                    <a href="#">Refund</a>
+                    <a href="#">Shipping</a>
+                    <div class="app-store-btns mt-2">
+                        <img src="public/images/google.png" alt="Google Play">
+                        <img src="public/images/app.png" alt="App Store">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>

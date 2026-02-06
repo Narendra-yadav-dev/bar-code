@@ -73,4 +73,7 @@ class HomeController extends Controller
         ]);
         return redirect()->back()->with('success', 'Item registered successfully!');
     }
+    public function reader(){
+        return view('reader');
+    }
 }

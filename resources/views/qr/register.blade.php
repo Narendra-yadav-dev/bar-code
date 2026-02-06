@@ -242,7 +242,7 @@
                         <button type="submit" class="btn btn-primary w-100 register-btn">
                             Register
                         </button>
-                        <a href="{{route('index')}}" class="btn btn-primary w-100 back-btn">
+                        <a href="{{route('reader')}}" class="btn btn-primary w-100 back-btn">
                             Back
                         </a>
                     </div>

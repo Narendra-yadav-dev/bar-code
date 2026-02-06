@@ -42,6 +42,7 @@ Route::prefix('admin')->group(function () {
     });
 });
 Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/reader', [HomeController::class, 'reader'])->name('reader');
 Route::get('/scan/{rockId}', [HomeController::class, 'scan']);
 Route::post('/scan/{rockId}', [HomeController::class, 'store'])->name('scan.store');
 Route::post('/register-item', [HomeController::class, 'store'])->name('register-item');
