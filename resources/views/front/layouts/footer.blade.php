@@ -1,28 +1,27 @@
 <section class="illustration-box">
     <div class="container">
-        <img src="public/images/cta-banner.jpg" alt="Team Illustration">
+        <figure>
+            <img src="public/images/cta-banner.jpg" width="80%" alt="Team Illustration">
+        </figure>
     </div>
 </section>
 
-<div class="container">
-    <div class="cta-banner d-flex justify-content-between align-items-center flex-wrap">
+<footer>
+    <div class="container">
+         <div class="cta-banner d-flex justify-content-between align-items-center flex-wrap">
         <div class="mb-3 mb-md-0">
             <h2 class="fw-bold h1 mb-1">950,000 Registered User in India.</h2>
             <h3 class="fw-light">Join the Revolution today !</h3>
         </div>
         <button class="btn btn-light btn-lg px-5 py-2 fw-bold text-dark">Shop Now</button>
     </div>
-</div>
-
-<footer>
-    <div class="container">
         <div class="row g-5">
 
-            <div class="col-md-3">
-                <img src="public/images/logo1.png" width="60%" height="auto">
+            <div class="col-md-3 mt-5">
+                <img src="public/images/logo1.png" width="50%" height="auto">
                 <div class="small opacity-75">
                 <p class="mb-0">© 2026 NGFI32.</p>
-                <p class="mb-3">All rights reserved.<br>NGFI32 Pvt Ltd</p>
+                <p class="mb-3">All rights reserved.<br>ROCK ID Pvt Ltd</p>
             </div>
             <div class="social-icons">
                 <i class="fab fa-twitter"></i>

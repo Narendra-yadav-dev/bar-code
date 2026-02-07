@@ -4,7 +4,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent position-absolute w-100">
         <div class="container">
             <a class="navbar-brand font-weight-bold" href="#">
-                <img src="public/images/logo1.png" width="100" height="100" alt="Logo">
+                <img src="public/images/logo.png" width="90" height="90" alt="Logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -41,14 +41,14 @@
 <section class="main1 pt-5">
     <div class="container">
         <div class="text-center mb-5">
-            <h2 class="fw-normal">Car Sampark Tag, Features.</h2>
+            <h2 class="fw-normal">Car QR Code Tag, Features.</h2>
         </div>
         <div class="row text-center g-4">
             <div class="col-md-4">
                 <div class="feature-icon d-flex align-items-center justify-content-center bg-black-car">
                     <i class="fa fa-car text-warning"></i>
                 </div>
-                <h3 class="feature-title">Car & Bike Sampark tag</h3>
+                <h3 class="feature-title">Car & Bike QR Code tag</h3>
                 <p class="feature-text">
                     Your contact details will not be shared, but anyone who has any issue with your parked vehicle can contact you.
                 </p>
@@ -80,14 +80,14 @@
 </section>
 <!--  -->
 <div class="container my-5">
-    <div class="product-card p-4 p-lg-5">
+    <div class="product-card py-4">
         <div class="row align-items-center">
             <div class="col-lg-7 mb-4 mb-lg-0 text-center">
-                <img src="public/images/thetags1.png" width="100%" height="auto" alt="Sampark QR Parking Tag Preview" class="img-fluid thetags1">
+                <img src="public/images/rock-banner.png" width="100%" height="auto" alt="Rock ID QR Parking Tag Preview" class="img-fluid thetags1">
             </div>
             <div class="col-lg-5">
                 <p class="text-uppercase text-muted small mb-2">Car and Bike Parking Tag</p>
-                <h1 class="display-6 mb-4 text-dark">Privacy and Security at its Best, <br><span class="text-dark">NGF132 Vehicle Parking Tag.</span></h1>
+                <h1 class="display-6 mb-4 text-dark">Privacy and Security at its Best, <br><span class="text-dark">Rock ID Vehicle Parking Tag.</span></h1>
                 <div class="row g-4">
                     <div class="col-md-6">
                         <h3 class="feature-title"><span class="number_coloe">1.</span> Private Contact</h3>
@@ -152,7 +152,7 @@
             </div>
             <div class="col-lg-7 col-md-6 text-center">
                 <div class="phone-mockup-container position-relative">
-                    <img src="public/images/phone_image.png" alt="NGF132 App Interface" class="phone-img rounded-4" width="200px" height="auto">
+                    <img src="public/images/rock-banner-2.png" alt="NGF132 App Interface" class="phone-img rounded-4" width="100%" height="auto">
                 </div>
             </div>
         </div>
@@ -206,7 +206,7 @@
     <div class="row align-items-center g-5">
         <div class="col-lg-7">
             <div class="position-relative text-center">
-                <img src="public/images/themore000.png" alt="App Interface" width="100%" height="auro" class="img-fluid offline-tags">
+                <img src="public/images/rock-banner-3.png" alt="App Interface" width="100%" height="auro" class="img-fluid offline-tags">
             </div>
         </div>
         <div class="col-lg-5 parking-tag">
@@ -245,7 +245,7 @@
         <div class="row g-5 align-items-center">
 
             <div class="col-lg-6 order-2 order-lg-1 text-center">
-                <h3 class="tag-title h2 mb-3">Get sampark tag for your business</h3>
+                <h3 class="tag-title h2 mb-3">Get Rock ID tag for your business</h3>
                 <p class="text-muted mb-4">
                     Tag with your logo and name. Manage Vehicle logs and get special CRM.
                 </p>
@@ -271,7 +271,7 @@
 
             <div class="col-lg-6 order-1 order-lg-2">
                 <div class="preview-container text-center">
-                    <img src="public/images/socit22.png" width="100%" height="auto" alt="Sampark Tag Mockup" class="tag-mockup mb-4">
+                    <img src="public/images/rock-banner-4.png" width="100%" height="auto" alt="Rock ID Tag Mockup" class="tag-mockup mb-4">
 
                 </div>
             </div>
@@ -285,13 +285,13 @@
     <div class="row align-items-center g-5">
         <div class="col-lg-6">
             <div class="position-relative text-center">
-                <img src="public/images/8sui8.jpeg" alt="App Interface" width="100%" height="auro" class="img-fluid feature-section-image">
+                <img src="public/images/rock-banner.png" alt="App Interface" width="100%" height="auro" class="img-fluid feature-section-image">
             </div>
         </div>
         <div class="col-lg-6 text-center">
             <h3 class="tag-title h2 mb-3">Starter pack for Shops and Garages</h3>
             <p class="text-muted mb-4">
-                Get pack of 20 Car sampark tags for your shop or garage for only 2999 Rs. Try now. Customization with your logo available.
+                Get pack of 20 Car Rock ID tags for your shop or garage for only 2999 Rs. Try now. Customization with your logo available.
             </p>
             <ul class="list-unstyled mb-4">
                 <li>
@@ -309,7 +309,7 @@
                 <li>
                     <div class="custom-check-badge me-2"><i class="fas fa-check btn_yellow_text"></i> </div> 60 Days Money back
                 </li>
-                <p class="text-muted mb-4">Sell / gift this customized car sampark tags to your customers build trust, Get repeat customers and build your own marketing system.</p>
+                <p class="text-muted mb-4">Sell / gift this customized car Rock ID tags to your customers build trust, Get repeat customers and build your own marketing system.</p>
             </ul>
             <a href="#" class="btn btn-dark-custom">Apply Now</a>
         </div>
@@ -408,9 +408,9 @@
         <div class="row g-4 justify-content-center">
             <div class="col-md-4">
                 <div class="card h-100 border-0">
-                    <img src="{{asset('public/images/checkout-product-1.png')}}" class="img-fluid card-img-top p-3" alt="Car Sampark Tag Pack of 2">
-                    <div class="card-body d-flex flex-column">
-                        <p class="card-text text-start fw-bold">(Pack of 2) Car sampark tag. Let people call you for any
+                    <img src="{{asset('public/images/rock-banner.png')}}" class="img-fluid card-img-top p-3" alt="Car Rock ID Tag Pack of 2">
+                    <div class="card-body d-flex flex-column p-0">
+                        <p class="card-text text-start fw-bold">(Pack of 2) Car Rock ID tag. Let people call you for any
                             issues with your parked car.</p>
                         <p class="fw-bold text-start text-muted">₹ 499</p>
                         <button class="btn btn-warning text-dark add-to-cart">
@@ -422,8 +422,8 @@
 
             <div class="col-md-4">
                 <div class="card h-100 border-0">
-                    <img src="{{asset('public/images/checkout-product-3.jpeg')}}" class="img-fluid card-img-top p-3" alt="Bike Tags">
-                    <div class="card-body d-flex flex-column">
+                    <img src="{{asset('public/images/rock-banner-3.png')}}" class="img-fluid card-img-top p-3" alt="Bike Tags">
+                    <div class="card-body d-flex flex-column p-0">
                         <p class="card-text text-start fw-bold">2 NGF132 Bike Tags. (1 For Bike, 1 For Helmet ). Get Help in
                             emergency and Wrong Parking</p>
                         <p class="fw-bold text-start text-muted">₹ 499</p>
@@ -436,9 +436,9 @@
 
             <div class="col-md-4">
                 <div class="card h-100 border-0">
-                    <img src="{{asset('public/images/checkout-product-2.png')}}" class="img-fluid card-img-top p-3" alt="Car Sampark Tag Pack of 1">
-                    <div class="card-body d-flex flex-column">
-                        <p class="card-text text-start fw-bold">(Pack of 1) Car sampark tag. Let people call you for any
+                    <img src="{{asset('public/images/rock-banner-2.png')}}" class="img-fluid card-img-top p-3" alt="Car Rock ID Tag Pack of 1">
+                    <div class="card-body d-flex flex-column p-0">
+                        <p class="card-text text-start fw-bold">(Pack of 1) Car Rock ID tag. Let people call you for any
                             issues with your parked car.</p>
                         <p class="fw-bold text-start text-muted">₹ 399</p>
                         <button class="btn btn-warning text-dark add-to-cart">
@@ -466,7 +466,7 @@
                     Some of our Special Points.
                 </h2>
                 <p class="text-muted best-feature">
-                    The NGF132, ALL in ONE APP, Brings the best features to manage your NGF132 tags.
+                    The Rock ID, ALL in ONE APP, Brings the best features to manage your Rock ID tags.
                 </p>
             </div>
 
@@ -517,8 +517,7 @@
         <div class="row align-items-center">
 
             <div class="col-lg-6 mb-4 mb-lg-0 text-center">
-                <img src="public/images/902755120untitleddesignpng.png.png" class="img-fluid" alt="Sampark App Management"
-                    style="max-height: 450px; width: auto;">
+                <img src="public/images/rock-banner-4.png" class="img-fluid" alt="Rock ID App Management" width="100%">
             </div>
 
             <div class="col-lg-6 ps-lg-5">
@@ -559,8 +558,8 @@
                         </a>
                     </div>
                     <div class="mt-4 text-center">
-                        <img src="public/images/1111111.png" class="img-fluid rounded-top-4"
-                            alt="Search Vehicle App Interface" style="max-height: 300px;">
+                        <img src="public/images/rock-banner.png" class="img-fluid rounded-top-4"
+                            alt="Search Vehicle App Interface" width="100%">
                     </div>
                 </div>
             </div>
@@ -579,8 +578,8 @@
                         </a>
                     </div>
                     <div class="mt-4 text-center">
-                        <img src="public/images/22222222.png" class="img-fluid rounded-top-4"
-                            alt="Free PDF Copy Interface" style="max-height: 300px;">
+                        <img src="public/images/rock-banner-2.png" class="img-fluid rounded-top-4"
+                            alt="Free PDF Copy Interface" width="100%">
                     </div>
                 </div>
             </div>
@@ -594,7 +593,7 @@
 
             <div class="col-lg-6 mb-4 mb-lg-0">
                 <div class="position-relative rounded-4 overflow-hidden shadow-sm">
-                    <img src="public/images/resellrt222.png" width="100%" height="auto" class="img-fluid" alt="Franchise Event">
+                    <img src="public/images/rock-banner-3.png" width="100%" height="auto" class="img-fluid" alt="Franchise Event">
                 </div>
             </div>
 

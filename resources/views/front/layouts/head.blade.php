@@ -24,7 +24,7 @@
     }
 
     .hero-section {
-        background: linear-gradient(rgb(0 0 0 / 30%), rgba(0, 0, 0, 0.6)), url('public/images/sti.jpeg');
+        background: linear-gradient(rgb(0 0 0 / 30%), rgba(0, 0, 0, 0.6)), url('public/images/rock-banner-3.png');
         background-size: cover;
         background-position: center;
         min-height: 75vh;
@@ -164,11 +164,6 @@
         margin: 0 auto;
     }
 
-    .phone-img {
-        width: 75%;
-        height: 600px;
-    }
-
     .display-4 {
         font-size: 45px !important;
     }
@@ -279,16 +274,17 @@
             font-size: 16px !important;
         }
         .thetags1{
-            width: 100% !important;
+            width: 100%;
+            height: 100%;
         }
         .phone-img{
-            width: 100% !important;
+            width: 100%;
         }
         .social{
             margin-bottom: 20px;
         }
         .offline-tags{
-            width: 100% !important;
+            width: 100%;
         }
         .parking-tag{
             text-align: center;
@@ -300,7 +296,7 @@
             margin-bottom: 20px;
         }
         .cta-banner{
-            margin: 0 0 -60px 0 !important;
+            margin: 0 0 -60px 0;
         }
         footer {
             text-align: center;
@@ -370,16 +366,10 @@
         font-size: 0.9rem;
     }
 
-    @media (min-width: 1200px) {
-
-        .container,
-        .container-lg,
-        .container-md,
-        .container-sm,
-        .container-xl {
-            max-width: 1500px !important;
-        }
-    }
+ .navbar.bg-transparent
+{
+  background-color: #ffffff66 !important;
+}
 
     .display-6 {
         font-size: 34px !important;
@@ -499,8 +489,6 @@
     }
 
     .tag-mockup {
-        width: 75%;
-        height: auto;
         border-radius: 12px;
         box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
     }
@@ -570,12 +558,13 @@
         padding-top: 50px;
         text-align: center;
     }
-
+.illustration-box figure{
+    padding: 0;
+    margin: 0;
+}
     .illustration-box img {
-        max-width: 100%;
-        height: auto;
-        max-height: 500px;
         opacity: 0.7;
+        margin: auto;
     }
 
     /* CTA Banner */
@@ -586,14 +575,19 @@
         border-radius: 8px;
         position: relative;
         z-index: 10;
-        margin: 0 151px -60px 151px;
+            position: relative;
+    transform: translateY(-50%);
+        margin: auto;
+    width: 77%;
+    bottom: 0;
     }
 
     /* Footer */
     footer {
         background-color: #1c1f23;
         color: #ffffff;
-        padding-top: 100px;
+        position: relative;
+        /* padding-top: 100px; */
         /* Extra padding to clear the CTA overlap */
         padding-bottom: 40px;
     }
@@ -626,15 +620,6 @@
         margin-right: 15px;
         font-size: 1.1rem;
         cursor: pointer;
-    }
-
-    .offline-tags {
-        height: 650px;
-        width: 75%;
-    }
-
-    .feature-section-image {
-        width: 70%;
     }
 
     .stat-icon img {
@@ -694,11 +679,6 @@
     .fill-secondary {
         fill: #e7bbbb;
         /* orange / pink */
-    }
-
-    .thetags1 {
-        height: 575px;
-        width: 75%;
     }
 </style>
 
