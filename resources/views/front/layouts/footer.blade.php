@@ -20,7 +20,7 @@
             <div class="col-md-3 mt-5">
                 <img src="public/images/logo1.png" width="50%" height="auto">
                 <div class="small opacity-75">
-                <p class="mb-0">© 2026 NGFI32.</p>
+                <p class="mb-0">© 2026 Rock Id.</p>
                 <p class="mb-3">All rights reserved.<br>ROCK ID Pvt Ltd</p>
             </div>
             <div class="social-icons">
@@ -34,10 +34,10 @@
             <div class="col-md-3">
                 <h6 class="fw-bold mb-3">Get in Touch</h6>
                 <div class="small opacity-75">
-                    <p class="mb-1">GCC Noida, India</p>
-                    <p class="mb-3">UP 201301</p>
-                    <p class="mb-1">hello@ngfi32.com</p>
-                    <p class="mb-3">+91 9034 6644 87</p>
+                    <p class="mb-1">Udhyogi bhawan Kankarbagh</p>
+                    <p class="mb-3">patna 800020</p>
+                    <p class="mb-1">rjnifft@gmail.com</p>
+                    <p class="mb-3">+91 0000 0000 00</p>
                     <hr class="w-75 border-secondary">
                     <p><i class="fi fi-in"></i> Update location</p>
                 </div>
@@ -45,7 +45,7 @@
     
             <div class="col-md-3">
                 <h6 class="fw-bold mb-3">Learn More</h6>
-                <a href="#" class="footer-link">About Us</a>
+                <a href="{{route('about')}}" class="footer-link">About Us</a>
                 <a href="#" class="footer-link">Contact</a>
                 <a href="#" class="footer-link">Terms of Use</a>
                 <a href="#" class="footer-link">Privacy Policy</a>

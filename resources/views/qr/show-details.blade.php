@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ asset('public/css/style.css') }}">
     <link rel="shortcut icon" href="{{ asset('public/images/favicon.png') }}">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"> -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 <style>
     body {
@@ -239,17 +240,20 @@
                     <hr>
                     <div class="mb-3 d-flex gap-3 text-start">
                         <strong style="width: 150px;text-align: left;">Mobile Number:</strong>
-                        <div>{{ $item->phone }}</div>
+                        <div class="mobile_number" style="display: none;">{{ $item->phone }}</div>
+                        <div class="mobile_number_call">Call</div>
                     </div>
 
                     <div class="mb-3 d-flex gap-3 text-start">
                         <strong style="width: 150px;text-align: left;">Alternate Mobile Number:</strong>
-                        <div>{{ $item->extra_data['alternate_phone'] ?? '-' }}</div>
+                        <div class="alternate_mobile_number" style="display: none;">{{ $item->extra_data['alternate_phone'] ?? '-' }}</div>
+                        <div class="alternate_mobile_number_call">Call</div>
                     </div>
 
                     <div class="mb-3 d-flex gap-3 text-start">
                         <strong style="width: 150px;text-align: left;">Emergency Mobile Number:</strong>
-                        <div>{{ $item->extra_data['emergency_phone'] ?? '-' }}</div>
+                        <div class="emergency_mobile_number" style="display: none;">{{ $item->extra_data['emergency_phone'] ?? '-' }}</div>
+                        <div class="emergency_mobile_number_call">Call</div>
                     </div>
                 </div>
                 <div class="row">
@@ -261,5 +265,19 @@
 
     </div>
 </body>
+<script>
+    $('.mobile_number_call').on('click',function(){
+        $('.mobile_number').css('display','block');
+        $(this).css('display','none');
+    })
+    $('.alternate_mobile_number_call').on('click',function(){
+        $('.alternate_mobile_number').css('display','block');
+        $(this).css('display','none');
+    })
+    $('.emergency_mobile_number_call').on('click',function(){
+        $('.emergency_mobile_number').css('display','block');
+        $(this).css('display','none');
+    })
+</script>
 
 </html>

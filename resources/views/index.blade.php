@@ -154,7 +154,7 @@
             </div>
             <div class="col-lg-7 col-md-6 text-center">
                 <div class="phone-mockup-container position-relative">
-                    <img src="public/images/rock-banner-2.png" alt="NGF132 App Interface" class="phone-img rounded-4" width="100%" height="auto">
+                    <img src="public/images/rock-banner-2.png" alt="Rock Id App Interface" class="phone-img rounded-4" width="100%" height="auto">
                 </div>
             </div>
         </div>
@@ -426,7 +426,7 @@
                 <div class="card h-100 border-0">
                     <img src="{{asset('public/images/rock-banner-3.png')}}" class="img-fluid card-img-top p-3" alt="Bike Tags">
                     <div class="card-body d-flex flex-column p-0">
-                        <p class="card-text text-start fw-bold">2 NGF132 Bike Tags. (1 For Bike, 1 For Helmet ). Get Help in
+                        <p class="card-text text-start fw-bold">2 Rock Id Bike Tags. (1 For Bike, 1 For Helmet ). Get Help in
                             emergency and Wrong Parking</p>
                         <p class="fw-bold text-start text-muted">₹ 499</p>
                         <button class="btn btn-warning text-dark add-to-cart">
