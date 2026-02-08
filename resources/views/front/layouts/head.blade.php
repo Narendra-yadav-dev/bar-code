@@ -228,14 +228,29 @@
     }
 
     .mobile_sidebaar_bg_color {
-        background-color: #989d928f !important;
+        background-color: #ffffff !important;
+    }
+    .mobile_view{
+        display: none;
+    }
+    .desktop_view{
+        display: block;
     }
 
     @media (max-width: 991px) {
         .responsive_class {
             padding: 0px;
         }
-
+    .hero-section{
+        min-height: 100%;
+        padding: 50px 0;
+    }
+    .mobile_view{
+        display: block;
+    }
+    .desktop_view{
+        display: none;
+    }
         .footer-logo {
             width: 110px;
         }
@@ -368,7 +383,10 @@
 
  .navbar.bg-transparent
 {
-  background-color: #ffffff66 !important;
+  background-color: #ffffff !important;
+}
+.navbar .navbar-toggler{
+  background-color: #0f0c29 !important;
 }
 
     .display-6 {
