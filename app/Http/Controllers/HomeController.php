@@ -76,4 +76,8 @@ class HomeController extends Controller
     public function reader(){
         return view('reader');
     }
+    public function about()
+    {
+        return view('about');
+    }
 }

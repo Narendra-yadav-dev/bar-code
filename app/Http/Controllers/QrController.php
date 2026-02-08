@@ -9,6 +9,8 @@ use DB;
 use App\Models\QRCode as QRCodeModel;
 use App\Models\Category;
 use App\Models\Item;
+use App\Exports\QrCodesExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class QrController extends Controller
 {
@@ -113,4 +115,15 @@ class QrController extends Controller
     // {
     //     return view('qr.generated');
     // }
+    public function export(Request $request)
+    {
+        if (!$request->qr_ids) {
+            return back()->with('error', 'Please select at least one record');
+        }
+
+        return Excel::download(
+            new QrCodesExport($request->qr_ids),
+            'qr-codes.xlsx'
+        );
+    }
 }

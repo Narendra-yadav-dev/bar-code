@@ -37,7 +37,8 @@
         max-width: 700px;
         margin: auto;
         border-radius: 14px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        background: none !important;
+        /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); */
         border: none;
     }
 
@@ -92,20 +93,44 @@
         padding: 10px 30px;
         border-radius: 30px;
     }
-    .back-btn{
+
+    .back-btn {
         background-color: #31785882;
         border: none;
         height: 50px;
         padding-top: 18px;
     }
-    .back-btn:hover{
+
+    .back-btn:hover {
         background-color: #31785882;
     }
-    .content-wrapper{
+
+    .content-wrapper {
         padding-top: 20px;
     }
-    .card-body{
+
+    .card-body {
         text-align: center;
+    }
+
+    .main_out {
+        margin: auto;
+        width: 50%;
+        max-width: 100%;
+    }
+
+    @media(max-width:576px) {
+        .main_out {
+            width: 100%;
+        }
+
+        .content-wrapper {
+            padding: 20px;
+        }
+
+        .card .card-body {
+            padding: 0px !important;
+        }
     }
 </style>
 
@@ -152,78 +177,80 @@
                         style="max-height:250px;">
                 </div>
                 @endif
-                @if($qr->categories->slug === 'luggage')
-                <div class="mb-3">
-                    <strong>Luggage Type:</strong>
-                    <div>{{ $item->extra_data['luggage_type'] ?? '-' }}</div>
-                </div>
-                @else
-                <div class="mb-3">
-                    <strong>
-                        {{ $qr->categories->slug === 'dogs' ? 'Dog Name' : 'Product Name' }}:
-                    </strong>
-                    <div>{{ $item->name }}</div>
-                </div>
-                @endif
+                <div class="main_out">
+                    @if($qr->categories->slug === 'luggage')
+                    <div class="mb-3 d-flex gap-3 text-start">
+                        <strong style="width: 150px;text-align: left;">Luggage Type:</strong>
+                        <div>{{ $item->extra_data['luggage_type'] ?? '-' }}</div>
+                    </div>
+                    @else
+                    <div class="mb-3 d-flex gap-3 text-start">
+                        <strong style="width: 150px;text-align: left;">
+                            {{ $qr->categories->slug === 'dogs' ? 'Dog Name' : 'Product Name' }}:
+                        </strong>
+                        <div>{{ $item->name }}</div>
+                    </div>
+                    @endif
 
-                <div class="mb-3">
-                    <strong>Owner Name:</strong>
-                    <div>{{ $item->owner_name }}</div>
-                </div>
-                @if(in_array($qr->categories->slug, ['car','bike']))
-                <div class="mb-3">
-                    <strong>Vehicle Number:</strong>
-                    <div>{{ $item->extra_data['vehical_number'] ?? '-' }}</div>
-                </div>
+                    <div class="mb-3 d-flex gap-3 text-start">
+                        <strong style="width: 150px;text-align: left;">Owner Name:</strong>
+                        <div>{{ $item->owner_name }}</div>
+                    </div>
+                    @if(in_array($qr->categories->slug, ['car','bike']))
+                    <div class="mb-3 d-flex gap-3 text-start">
+                        <strong style="width: 150px;text-align: left;">Vehicle Number:</strong>
+                        <div>{{ $item->extra_data['vehical_number'] ?? '-' }}</div>
+                    </div>
 
-                <div class="mb-3">
-                    <strong>Product Model:</strong>
-                    <div>{{ $item->extra_data['product_model'] ?? '-' }}</div>
-                </div>
+                    <div class="mb-3 d-flex gap-3 text-start">
+                        <strong style="width: 150px;text-align: left;">Product Model:</strong>
+                        <div>{{ $item->extra_data['product_model'] ?? '-' }}</div>
+                    </div>
 
-                <div class="mb-3">
-                    <strong>Product Color:</strong>
-                    <div>{{ $item->extra_data['product_color'] ?? '-' }}</div>
-                </div>
-                @endif
+                    <div class="mb-3 d-flex gap-3 text-start">
+                        <strong style="width: 150px;text-align: left;">Product Color:</strong>
+                        <div>{{ $item->extra_data['product_color'] ?? '-' }}</div>
+                    </div>
+                    @endif
 
-                @if($qr->categories->slug === 'dogs')
-                <div class="mb-3">
-                    <strong>Breed:</strong>
-                    <div>{{ $item->extra_data['breed'] ?? '-' }}</div>
-                </div>
+                    @if($qr->categories->slug === 'dogs')
+                    <div class="mb-3 d-flex gap-3 text-start">
+                        <strong style="width: 150px;text-align: left;">Breed:</strong>
+                        <div>{{ $item->extra_data['breed'] ?? '-' }}</div>
+                    </div>
 
-                <div class="mb-3">
-                    <strong>Color:</strong>
-                    <div>{{ $item->extra_data['color'] ?? '-' }}</div>
-                </div>
+                    <div class="mb-3 d-flex gap-3 text-start">
+                        <strong style="width: 150px;text-align: left;">Color:</strong>
+                        <div>{{ $item->extra_data['color'] ?? '-' }}</div>
+                    </div>
 
-                <div class="mb-3">
-                    <strong>Gender:</strong>
-                    <div>{{ ucfirst($item->extra_data['gender'] ?? '-') }}</div>
-                </div>
-                @endif
+                    <div class="mb-3 d-flex gap-3 text-start">
+                        <strong style="width: 150px;text-align: left;">Gender:</strong>
+                        <div>{{ ucfirst($item->extra_data['gender'] ?? '-') }}</div>
+                    </div>
+                    @endif
 
-                @if($qr->categories->slug === 'luggage')
-                <div class="mb-3">
-                    <strong>Description:</strong>
-                    <div>{{ $item->extra_data['description'] ?? '-' }}</div>
-                </div>
-                @endif
-                <hr>
-                <div class="mb-3">
-                    <strong>Mobile Number:</strong>
-                    <div>{{ $item->phone }}</div>
-                </div>
+                    @if($qr->categories->slug === 'luggage')
+                    <div class="mb-3 d-flex gap-3 text-start">
+                        <strong style="width: 150px;text-align: left;">Description:</strong>
+                        <div>{{ $item->extra_data['description'] ?? '-' }}</div>
+                    </div>
+                    @endif
+                    <hr>
+                    <div class="mb-3 d-flex gap-3 text-start">
+                        <strong style="width: 150px;text-align: left;">Mobile Number:</strong>
+                        <div>{{ $item->phone }}</div>
+                    </div>
 
-                <div class="mb-3">
-                    <strong>Alternate Mobile Number:</strong>
-                    <div>{{ $item->extra_data['alternate_phone'] ?? '-' }}</div>
-                </div>
+                    <div class="mb-3 d-flex gap-3 text-start">
+                        <strong style="width: 150px;text-align: left;">Alternate Mobile Number:</strong>
+                        <div>{{ $item->extra_data['alternate_phone'] ?? '-' }}</div>
+                    </div>
 
-                <div class="mb-3">
-                    <strong>Emergency Mobile Number:</strong>
-                    <div>{{ $item->extra_data['emergency_phone'] ?? '-' }}</div>
+                    <div class="mb-3 d-flex gap-3 text-start">
+                        <strong style="width: 150px;text-align: left;">Emergency Mobile Number:</strong>
+                        <div>{{ $item->extra_data['emergency_phone'] ?? '-' }}</div>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12 text-center"> <a href="{{route('reader')}}" class="btn btn-primary mt-2 create_category_button_font back-btn">Back</a>

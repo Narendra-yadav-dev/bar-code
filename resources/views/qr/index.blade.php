@@ -38,9 +38,28 @@
                         </div>
                     </form>
                     <div class="table-responsive">
-                        <form method="POST" action="{{ route('qr-code.print') }}" target="_blank">
+                        <!-- <form method="POST" action="{{ route('qr-code.print') }}" target="_blank">
                             @csrf
                             <button class="btn btn-primary">Print Selected</button>
+                            <button class="btn btn-primary">Export Excel</button> -->
+                        <form method="POST">
+                            @csrf
+
+                            <!-- Buttons -->
+                            <button
+                                type="submit"
+                                class="btn btn-primary me-2"
+                                formaction="{{ route('qr-code.print') }}"
+                                formtarget="_blank">
+                                Print Selected
+                            </button>
+
+                            <button
+                                type="submit"
+                                class="btn btn-success"
+                                formaction="{{ route('qr-code.export') }}">
+                                Export Excel
+                            </button>
                             <table class="table">
                                 <thead>
                                     <tr>
@@ -85,10 +104,10 @@
     </div>
 </div>
 <script>
-document.getElementById('selectAll').addEventListener('click', function () {
-    document.querySelectorAll('input[name="qr_ids[]"]').forEach(cb => {
-        cb.checked = this.checked;
+    document.getElementById('selectAll').addEventListener('click', function() {
+        document.querySelectorAll('input[name="qr_ids[]"]').forEach(cb => {
+            cb.checked = this.checked;
+        });
     });
-});
 </script>
 @endsection

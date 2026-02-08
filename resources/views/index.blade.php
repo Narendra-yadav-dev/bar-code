@@ -19,7 +19,7 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 text-uppercase small">
                         <li class="nav-item"><a class="nav-link text-dark me-lg-5" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link text-dark me-lg-5" href="#">About</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark me-lg-5" href="{{route('about')}}">About</a></li>
                         <li class="nav-item"><a class="nav-link text-dark me-lg-5" href="#">Products</a></li>
                         <li class="nav-item"><a class="nav-link text-dark me-lg-5 desktop_view" href="{{route('reader')}}">QR Code Reader</a></li>
                     </ul>

@@ -30,6 +30,7 @@ Route::prefix('admin')->group(function () {
         Route::put('/qr/generate/{id}', [QrController::class, 'update'])->name('qr-code.update');
         Route::get('/bar-code-reader', [QrController::class, 'reader'])->name('qr-code.reader');
         Route::post('/print', [QrController::class, 'print'])->name('qr-code.print');
+        Route::post('/export', [QrController::class, 'export'])->name('qr-code.export');
     });
     // categories
     Route::prefix('categories')->group(function () {
@@ -42,6 +43,7 @@ Route::prefix('admin')->group(function () {
     });
 });
 Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/about-us', [HomeController::class, 'about'])->name('about');
 Route::get('/reader', [HomeController::class, 'reader'])->name('reader');
 Route::get('/scan/{rockId}', [HomeController::class, 'scan']);
 Route::post('/scan/{rockId}', [HomeController::class, 'store'])->name('scan.store');
