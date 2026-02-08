@@ -3,7 +3,7 @@
 <scetion class="main section-frame">
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent w-100">
         <div class="container">
-            <a class="navbar-brand font-weight-bold" href="#">
+            <a class="navbar-brand font-weight-bold" href="{{route('index')}}">
                 <img src="public/images/logo.png" width="90" height="90" alt="Logo">
             </a>
             <a class="nav-link text-dark me-lg-5 mobile_view" href="{{route('reader')}}">QR Code Reader</a>
@@ -18,7 +18,7 @@
                 </div>
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 text-uppercase small">
-                        <li class="nav-item"><a class="nav-link text-dark me-lg-5" href="#">Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark me-lg-5" href="{{route('index')}}">Home</a></li>
                         <li class="nav-item"><a class="nav-link text-dark me-lg-5" href="{{route('about')}}">About</a></li>
                         <li class="nav-item"><a class="nav-link text-dark me-lg-5" href="#">Products</a></li>
                         <li class="nav-item"><a class="nav-link text-dark me-lg-5 desktop_view" href="{{route('reader')}}">QR Code Reader</a></li>
