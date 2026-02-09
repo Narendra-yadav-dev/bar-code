@@ -72,22 +72,33 @@
 
     @media print {
         body * {
-        visibility: hidden;
-            }
-
-            #print-area,
-            #print-area * {
-                visibility: visible;
-            }
-
-            #print-area {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                border: 1px solid #000
-            }
+            visibility: hidden;
         }
+
+        #print-area,
+        #print-area * {
+            visibility: visible;
+        }
+
+        #print-area {
+            position: static;
+            /* ✅ VERY IMPORTANT */
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .qr-card {
+            break-inside: avoid;
+            page-break-inside: avoid;
+        }
+
+        /* ✅ New page after every 9 QR codes */
+        .qr-card:nth-child(9n) {
+            page-break-after: always;
+        }
+    }
 </style>
 
 <div class="content-wrapper">
@@ -113,7 +124,7 @@
                         @php
                         $categoryClass = strtolower($qr->categories->name ?? 'default');
                         @endphp
-                        <div class="qr-card {{ $categoryClass }}" >
+                        <div class="qr-card {{ $categoryClass }}">
                             <div class="title">
                                 {{ $qr->categories->name ?? 'QR CARD' }}
                             </div>
