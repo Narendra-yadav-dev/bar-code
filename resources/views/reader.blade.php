@@ -75,29 +75,28 @@
 
             html5QrCode = new Html5Qrcode("reader");
 
-            Html5Qrcode.getCameras().then(cameras => {
-                if (cameras && cameras.length) {
-                    const cameraId = cameras[0].id; // back camera
-                    html5QrCode.start(
-                        cameraId,
-                        { fps: 10, qrbox: 250 },
-                        qrCodeMessage => {
-                            console.log("QR Code:", qrCodeMessage);
-                            html5QrCode.stop();
-                            window.location.href = qrCodeMessage;
-                        },
-                        errorMessage => {
-                            // Ignore errors, or you can log them
-                        }
-                    ).catch(err => {
-                        console.error("Unable to start scanning:", err);
-                        alert("Camera access denied or not available.");
+            // ✅ FORCE BACK CAMERA
+            html5QrCode.start({
+                    facingMode: "environment"
+                }, // 👈 back camera
+                {
+                    fps: 10,
+                    qrbox: {
+                        width: 250,
+                        height: 250
+                    }
+                },
+                (qrCodeMessage) => {
+                    console.log("QR Code:", qrCodeMessage);
+                    html5QrCode.stop().then(() => {
+                        window.location.href = qrCodeMessage;
                     });
-                } else {
-                    alert("No camera found on this device.");
+                },
+                (errorMessage) => {
+                    // ignore scan errors
                 }
-            }).catch(err => {
-                console.error("Camera error:", err);
+            ).catch(err => {
+                console.error("Unable to start scanning:", err);
                 alert("Camera access denied or not available.");
             });
         });
@@ -113,5 +112,7 @@
             }
         });
     </script>
+
 </body>
+
 </html>

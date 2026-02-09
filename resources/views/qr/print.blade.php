@@ -71,10 +71,23 @@
     /* purple */
 
     @media print {
-        body {
-            margin: 0;
+        body * {
+        visibility: hidden;
+            }
+
+            #print-area,
+            #print-area * {
+                visibility: visible;
+            }
+
+            #print-area {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                border: 1px solid #000
+            }
         }
-    }
 </style>
 
 <div class="content-wrapper">
@@ -91,14 +104,16 @@
     <div class="row">
         <div class="col-12 grid-margin">
             <div class="card">
+                <div class="card-header">
+                    <button class="btn btn-success btn-social-icon-text" onclick="window.print()">Print</button>
+                </div>
                 <div class="card-body">
-                    <button onclick="window.print()">Print</button>
-                    <div class="qr-grid">
+                    <div class="qr-grid" id="print-area">
                         @foreach($qrCodes as $qr)
                         @php
                         $categoryClass = strtolower($qr->categories->name ?? 'default');
                         @endphp
-                        <div class="qr-card {{ $categoryClass }}">
+                        <div class="qr-card {{ $categoryClass }}" >
                             <div class="title">
                                 {{ $qr->categories->name ?? 'QR CARD' }}
                             </div>
