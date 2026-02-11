@@ -2,7 +2,7 @@
 
 namespace App\Exports;
 
-use App\Models\QrCode;
+use App\Models\QRCode;
 use Maatwebsite\Excel\Concerns\FromArray;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
@@ -12,7 +12,7 @@ class QrCodesExport implements FromArray, WithHeadings
 
     public function __construct($ids)
     {
-        $this->qrCodes = QrCode::whereIn('id', $ids)->get();
+        $this->qrCodes = QRCode::whereIn('id', $ids)->get();
     }
 
     public function headings(): array
