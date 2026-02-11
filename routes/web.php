@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\Auth\DashboardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -18,6 +18,10 @@ Route::prefix('admin')->group(function () {
     Route::middleware('auth')->group(function () {
         Route::get('/dashboard', [DashboardController::class, 'index'])
             ->name('dashbaord');
+        Route::get('/change-password', [DashboardController::class, 'changePassword'])
+            ->name('change-password');
+        Route::post('/change-password', [DashboardController::class, 'changePasswordPost'])
+            ->name('change-password-post');
 
         Route::get('/log-out', [AuthController::class, 'logout'])
             ->name('auth.logout');
@@ -28,7 +32,6 @@ Route::prefix('admin')->group(function () {
         Route::post('/qr/generate', [QrController::class, 'generate'])->name('qr-code.generate');
         Route::get('/qr/generate/{id}', [QrController::class, 'edit'])->name('qr-code.edit');
         Route::put('/qr/generate/{id}', [QrController::class, 'update'])->name('qr-code.update');
-        Route::get('/bar-code-reader', [QrController::class, 'reader'])->name('qr-code.reader');
         Route::post('/print', [QrController::class, 'print'])->name('qr-code.print');
         Route::post('/export', [QrController::class, 'export'])->name('qr-code.export');
     });

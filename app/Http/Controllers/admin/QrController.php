@@ -111,10 +111,6 @@ class QrController extends Controller
     //     $qr_code->save();
     //     return redirect()->route('qr-code.index');
     // }
-    // public function reader()
-    // {
-    //     return view('qr.generated');
-    // }
     public function export(Request $request)
     {
         if (!$request->qr_ids) {

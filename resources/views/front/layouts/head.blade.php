@@ -701,3 +701,51 @@
 </style>
 
 <body>
+    <scetion class="main section-frame">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent w-100">
+        <div class="container">
+            <a class="navbar-brand font-weight-bold" href="{{route('index')}}">
+                <img src="public/images/logo.png" width="90" height="90" alt="Logo">
+            </a>
+            <a class="nav-link text-dark me-lg-5 mobile_view" href="{{route('reader')}}">QR Code Reader</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end mobile_sidebaar_bg_color" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title text-dark" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close btn-close-dark" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1 pe-3 text-uppercase small">
+                        <li class="nav-item"><a class="nav-link text-dark me-lg-5" href="{{route('index')}}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark me-lg-5" href="{{route('about')}}">About</a></li>
+                        <li class="nav-item"><a class="nav-link text-dark me-lg-5 desktop_view" href="{{route('reader')}}">QR Code Reader</a></li>
+                    </ul>
+                    <div class="d-lg-none mt-3 text-dark">
+                        <a href="https://wa.me/918789464059" target="_blank">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                width="34"
+                                height="34"
+                                viewBox="0 0 24 24"
+                                fill="#25D366">
+                                <path d="M12.04 2C6.52 2 2 6.48 2 12c0 2.11.55 4.15 1.6 5.96L2 22l4.18-1.54A9.96 9.96 0 0 0 12.04 22C17.56 22 22 17.52 22 12S17.56 2 12.04 2zm5.8 14.49c-.25.7-1.45 1.35-2.04 1.44-.56.09-1.27.13-2.05-.13-.47-.15-1.08-.35-1.87-.69-3.3-1.42-5.44-4.78-5.61-5.01-.16-.23-1.34-1.78-1.34-3.4 0-1.62.85-2.42 1.15-2.75.3-.33.66-.41.88-.41.22 0 .44 0 .63.01.2.01.47-.07.73.56.25.63.86 2.17.93 2.33.07.16.11.36.02.58-.09.22-.13.36-.26.56-.13.2-.27.44-.39.59-.13.16-.26.33-.11.63.15.3.67 1.1 1.44 1.78.99.88 1.82 1.16 2.12 1.29.3.13.48.11.66-.07.18-.18.76-.88.97-1.18.2-.3.41-.25.69-.15.28.1 1.78.84 2.08.99.3.15.5.23.57.36.07.13.07.78-.18 1.48z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="d-none d-lg-block text-dark">
+                <a href="https://wa.me/918789464059" target="_blank">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        width="34"
+                        height="34"
+                        viewBox="0 0 24 24"
+                        fill="#25D366">
+                        <path d="M12.04 2C6.52 2 2 6.48 2 12c0 2.11.55 4.15 1.6 5.96L2 22l4.18-1.54A9.96 9.96 0 0 0 12.04 22C17.56 22 22 17.52 22 12S17.56 2 12.04 2zm5.8 14.49c-.25.7-1.45 1.35-2.04 1.44-.56.09-1.27.13-2.05-.13-.47-.15-1.08-.35-1.87-.69-3.3-1.42-5.44-4.78-5.61-5.01-.16-.23-1.34-1.78-1.34-3.4 0-1.62.85-2.42 1.15-2.75.3-.33.66-.41.88-.41.22 0 .44 0 .63.01.2.01.47-.07.73.56.25.63.86 2.17.93 2.33.07.16.11.36.02.58-.09.22-.13.36-.26.56-.13.2-.27.44-.39.59-.13.16-.26.33-.11.63.15.3.67 1.1 1.44 1.78.99.88 1.82 1.16 2.12 1.29.3.13.48.11.66-.07.18-.18.76-.88.97-1.18.2-.3.41-.25.69-.15.28.1 1.78.84 2.08.99.3.15.5.23.57.36.07.13.07.78-.18 1.48z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </nav>

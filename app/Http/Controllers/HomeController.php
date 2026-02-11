@@ -20,9 +20,9 @@ class HomeController extends Controller
         }
         if ($qr->is_registered == 1) {
             $item = Item::where('qr_code_id', $qr->id)->firstOrFail();
-            return view('qr.show-details', compact('qr', 'item'));
+            return view('reader.show-details', compact('qr', 'item'));
         }
-        return view('qr.register', compact('qr'));
+        return view('reader.register', compact('qr'));
     }
     public function store(Request $request, $rockId)
     {
@@ -74,7 +74,7 @@ class HomeController extends Controller
         return redirect()->back()->with('success', 'Item registered successfully!');
     }
     public function reader(){
-        return view('reader');
+        return view('reader.reader');
     }
     public function about()
     {

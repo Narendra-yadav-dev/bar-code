@@ -55,7 +55,7 @@
                         <button type="submit" class="btn btn-primary create_category_button_font">
                             {{ isset($qr_code) ? 'Update QR Code' : 'Generate QR Code' }}
                         </button>
-                        <a href="{{route('categories.index')}}" class="btn mt-2 btn-primary create_category_button_font">Back</a>
+                        <a href="{{route('qr-code.index')}}" class="btn mt-2 btn-primary create_category_button_font">Back</a>
                     </form>
                 </div>
             </div>
