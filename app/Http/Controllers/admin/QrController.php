@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
@@ -12,7 +12,7 @@ use App\Models\Item;
 use App\Exports\QrCodesExport;
 use Maatwebsite\Excel\Facades\Excel;
 
-class QrController extends Controller
+class QrController
 {
     public function index()
     {

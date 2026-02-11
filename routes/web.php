@@ -2,10 +2,10 @@
 
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\QrController;
+use App\Http\Controllers\admin\QrController;
 
 
 Route::prefix('admin')->group(function () {
